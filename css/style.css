@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;300;400;500;600;700;800&display=swap');
+
+:root {
+    --first-color: #48cef0;
+    --first-color-dark: #375861;
+    --first-color-second: #4cb5cf;
+    --text-color: #525252;
+    --text-color-light: #FBFBFB;
+    --body-color: #191919;
+    --container-color: #141414;
+}
+
+*, ::before, ::after { box-sizing: border-box; user-select: none; }
+body {
+    font-family: 'Lexend', sans-serif;
+    font-size: 1rem;
+    background-color: var(--body-color);
+    color: var(--text-color);
+}
+h3 { margin: 0; }
+a { text-decoration: none; }
+img { max-width: 100%; height: auto; }
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    padding: 1rem 1rem 0;
+    background-color: var(--container-color);
+    box-shadow: 1px 0 0 rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    transition: .4s;
+}
+.nav-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 3rem;
+    overflow: auto;
+    scrollbar-width: none;
+}
+.nav-container::-webkit-scrollbar {
+    display: none;
+}
+.nav-list, .nav-items {
+    display: grid;
+}
+.nav-list {
+    row-gap: 2.5rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.nav-items {
+    row-gap: 1.5rem;
+}
+.nav-link {
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+    transition: .3s ease;
+}
+.nav-link:hover {
+    color: var(--first-color);
+}
+.nav-icon {
+    font-size: 1.2rem;
+    margin-right: .5rem;
+}
+.nav-logout {
+    margin-top: 5rem;
+}
+.active {
+    color: var(--first-color);
+}
+
+@media screen and (min-width: 420px) {
+    body {
+        padding: 0;
+        padding-left: 6rem;
+    }
+    .nav {
+        left: 0;
+        padding: 1.2rem 1.5rem 0;
+        width: 68px; /* Reduced navbar */
+    }
+    .nav-items {
+        row-gap: 1.7rem;
+    }
+    .nav-icon {
+        font-size: 1.3rem;
+    }
+    .nav-github {
+        display: unset;
+    }
+}
+@media screen and (max-width: 420px) {
+    .nav {
+        display: none;
+    }
+}
+.section {
+    padding: 2rem 0 4rem;
+}
+.container {
+    max-width: 768px;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+.grid {
+    display: grid;
+}
+.home-container {
+    gap: 1rem;
+}
+.home-content {
+    grid-template-columns: .5fr 3fr;
+    padding-top: 3.5rem;
+    align-items: center;
+}
+.home-title {
+    font-size: 3rem;
+    color: var(--text-color-light);
+    margin: 0;
+    padding: 0;
+}
+.section-title {
+    font-size: 2rem;
+    color: var(--text-color-light);
+    margin: 0;
+    padding: 0;
+}
+.home-subtitle {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: .75rem;
+}
+.section-subtitle {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: .25rem;
+}
+.home-description {
+    margin-bottom: 2rem;
+}
+.home-scroll-button {
+    color: var(--first-color-second);
+    transition: .1s ease-in-out;
+    display: inline-block;
+}
+.home-scroll-name {
+    font-size: .8rem;
+    font-weight: 400;
+    margin-right: .25rem;
+}
+.home-scroll-arrow {
+    font-size: .7rem;
+}
+
+.skills-container {
+    row-gap: 0;
+}
+.skills-content {
+    background-color: var(--container-color);
+    padding: 0 1.5rem;
+    padding-bottom: .1rem;
+    margin-top: 1.5rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+.skills-header {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: var(--text-color-light);
+}
+.skills-icon, .skills-arrow {
+    font-size: 2rem;
+    color: var(--first-color-second);
+}
+.skills-icon {
+    margin-right: .75rem;
+}
+.skills-title {
+    font-size: 1rem;
+    color: var(--text-color-light);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .5rem;
+    font-weight: 400;
+}
+.skills-arrow {
+    margin-left: auto;
+    transform: .4s;
+}
+.skills-name {
+    font-size: 1rem;
+    font-weight: 500;
+}
+.skills-bar, .skills-percent {
+    height: 5px;
+    border-radius: .25rem;
+}
+.skills-bar {
+    background-color: var(--first-color-dark);
+    margin-bottom: 1rem;
+}
+.skills-percent {
+    display: block;
+    background-color: var(--first-color);
+}
+.skills-close .skills-list {
+    height: 0;
+    overflow: hidden;
+}
+.skills-open .skills-list {
+    height: max-content;
+    margin-bottom: 1rem;
+}
+.skills-open .skills-arrow {
+    transform: rotate(-180deg);
+    transition: .3s ease-in-out;
+}
+.skills-close .skills-arrow {
+    transition: .3s ease-in-out;
+}
+.skills-close ~ .skills-header {
+    margin-bottom: 0;
+}
+.skills-open ~ .skills-header {
+    margin-bottom: 2.5rem;
+}
+.skills-html { width: 93%; }
+.skills-css { width: 79%; }
+.skills-javascript { width: 71%; }
+.skills-java { width: 87%; }
+.skills-cs { width: 73%; }
+.skills-go { width: 65%; }
+.skills-php { width: 76%; }
+.skills-mysql { width: 76%; }
+.skills-postgresql { width: 58%; }
+
+.projects-container {
+    overflow: initial;
+    width: 265px;
+}
+.projects-content {
+    margin: auto;
+    display: inline-block;
+    width: 265px;
+}
+.projects-img {
+    width: 265px;
+    border-radius: .2rem;
+    justify-self: center;
+}
+.projects-title {
+    font-size: 1.5rem;
+    color: var(--text-color-light);
+    margin-bottom: .5rem;
+}
+.projects-description {
+    margin-bottom: .75rem;
+}
+.swiper-pagination-bullet-active {
+    background-color: var(--first-color);
+}
+.swiper-pagination-bullet {
+    outline: none;
+}
+.swiper-container {
+    padding-bottom: 2rem;
+}
+.project-container {
+    background-color: var(--container-color);
+    padding: 1rem;
+    border-radius: .75rem;
+}
+
+.scroll-up {
+    position: fixed;
+    right: 1rem;
+    bottom: -20%;
+    background-color: var(--first-color-dark);
+    opacity: .8;
+    padding: 0 .3rem;
+    border-radius: .4rem;
+    z-index: 100;
+    transition: .3s ease;
+}
+.scroll-up:hover {
+    background-color: var(--first-color);
+}
+.scrollup-icon {
+    font-size: 1.5rem;
+    color: #fff;
+    padding: .4rem;
+}
+.show-scroll {
+    bottom: 2rem;
+}
