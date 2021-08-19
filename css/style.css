@@ -301,3 +301,41 @@ img { max-width: 100%; height: auto; }
 .show-scroll {
     bottom: 2rem;
 }
+.animate-letter {
+    transition: .3s ease;
+    display: inline-block;
+}
+.animate-letter:hover {
+    color: var(--first-color);
+    animation: animation 2s 1;
+}
+
+@keyframes animation {
+    30% {
+        transform: scale(1, .7);
+    }
+    35% {
+        transform: scale(1, 1.2)
+    }
+    40% {
+        transform: scale(1, .8)
+    }
+    45% {
+        transform: scale(1, 1.1)
+    }
+    50% {
+        transform: scale(1, .9)
+    }
+    55% {
+        transform: scale(1, 1.05)
+    }
+    60% {
+        transform: scale(1, .95)
+    }
+    65% {
+        transform: scale(1, 1)
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
