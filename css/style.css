@@ -309,6 +309,15 @@ img { max-width: 100%; height: auto; }
     color: var(--first-color);
     animation: animation 2s 1;
 }
+.title-char {
+    transition: .3s ease;
+    transform: scale(1, 1);
+    display: inline-block;
+}
+.title-char:hover {
+    color: var(--first-color);
+    transform: scale(1, 1.2)
+}
 
 @keyframes animation {
     30% {
