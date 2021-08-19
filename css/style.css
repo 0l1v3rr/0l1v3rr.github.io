@@ -283,20 +283,22 @@ img { max-width: 100%; height: auto; }
     position: fixed;
     right: 1rem;
     bottom: -20%;
-    background-color: var(--first-color-dark);
+    background-color: var(--container-color);
     opacity: .8;
     padding: 0 .3rem;
     border-radius: .4rem;
     z-index: 100;
     transition: .3s ease;
-}
-.scroll-up:hover {
-    background-color: var(--first-color);
+    box-shadow: 0 0 10px rgba(69, 212, 255, 0.05);
 }
 .scrollup-icon {
     font-size: 1.5rem;
-    color: #fff;
+    color: var(--text-color-light);
     padding: .4rem;
+    transition: .3s linear;
+}
+.scrollup-icon:hover {
+    color: var(--first-color);
 }
 .show-scroll {
     bottom: 2rem;
