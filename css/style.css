@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;300;400;500;600;700;800&display=swap');
 
 :root {
-    --first-color: #48cef0;
-    --first-color-dark: #375861;
-    --first-color-second: #4cb5cf;
+    --first-color: #4CA6FF;
+    --first-color-dark: #3a628a;
+    --first-color-second: #5c91c5;
     --text-color: #525252;
     --text-color-light: #FBFBFB;
-    --body-color: #191919;
-    --container-color: #141414;
+    --body-color: #0D1117;
+    --container-color: #070a0e;
 }
 
 *, ::before, ::after { box-sizing: border-box; user-select: none; }
@@ -149,6 +149,9 @@ img { max-width: 100%; height: auto; }
     color: var(--first-color-second);
     transition: .1s ease-in-out;
     display: inline-block;
+}
+.home-scroll-button:hover {
+    transform: translateY(+10%);
 }
 .home-scroll-name {
     font-size: .8rem;
