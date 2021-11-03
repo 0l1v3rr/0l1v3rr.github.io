@@ -240,6 +240,8 @@ img { max-width: 100%; height: auto; }
 .skills-javascript { width: 71%; }
 .skills-java { width: 87%; }
 .skills-cs { width: 73%; }
+.skills-rust { width: 31%; }
+.skills-svelte { width: 67%; }
 .skills-go { width: 65%; }
 .skills-php { width: 76%; }
 .skills-mysql { width: 76%; }
