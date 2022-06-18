@@ -3,3 +3,7 @@
 @tailwind utilities;
 
 body::-webkit-scrollbar { display: none; }
+body { 
+    background-image: url('./assets/bigsur.jpg'); 
+    background-size: cover;
+}
