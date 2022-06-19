@@ -1,6 +1,15 @@
 import Home from "../components/Home";
 
+import { Route, Routes, Link, useLocation } from "react-router-dom";
+import Projects from "../components/Projects";
+
 const Terminal = () => {
+    const { pathname } = useLocation();
+
+    const activeLinkClasses = "text-gray-200 text-sm mx-4 sm:mx-6 md:mx-10 py-3 cursor-pointer";
+    const inactiveLinkClasses = `text-gray-400 text-sm mx-4 sm:mx-6 md:mx-10 py-3 cursor-pointer 
+        hover:text-gray-300 transition-all duration-300`;
+
     return (
         <div className="w-full h-full sm:rounded-lg bg-black/[.8] shadow-md
             shadow-black backdrop-blur-lg border border-solid border-gray-800 overflow-auto">
@@ -16,24 +25,29 @@ const Terminal = () => {
                 </div>
                 
                 <div className="flex items-center justify-center">
-                    <div className="text-gray-200 text-sm mx-4 sm:mx-6 md:mx-10 py-3 cursor-pointer">
-                        ../Home (-zsh)
-                    </div>
+                    <Link to="/">
+                        <div className={pathname === "/" ? activeLinkClasses : inactiveLinkClasses}>
+                            ../Home (-zsh)
+                        </div>
+                    </Link>
 
-                    <div className="text-gray-400 text-sm mx-4 sm:mx-6 md:mx-10 py-3 cursor-pointer 
-                        hover:text-gray-300 transition-all duration-300">
-                        ../Projects (-zsh)
-                    </div>
+                    <Link to="/projects">
+                        <div className={pathname === "/projects" ? activeLinkClasses : inactiveLinkClasses}>
+                            ../Projects (-zsh)
+                        </div>
+                    </Link>
 
-                    <div className="text-gray-400 text-sm mx-4 sm:mx-6 md:mx-10 py-3 cursor-pointer 
-                        hover:text-gray-300 transition-all duration-300">
+                    <div className={pathname === "/contact" ? activeLinkClasses : inactiveLinkClasses}>
                         ../Contact (-zsh)
                     </div>
                 </div>
             </div>
 
             <div className="font-mono font-thin px-3 py-1.5 text-sm">
-                <Home />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/projects" element={<Projects />} />
+                </Routes>
             </div>
         </div>
     );
