@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.eff4570b.css",
+    "main.js": "/static/js/main.bb75a12e.js",
+    "static/media/bigsur.jpg": "/static/media/bigsur.bad6fc918ed831c562d5.jpg",
+    "index.html": "/index.html",
+    "main.eff4570b.css.map": "/static/css/main.eff4570b.css.map",
+    "main.bb75a12e.js.map": "/static/js/main.bb75a12e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eff4570b.css",
+    "static/js/main.bb75a12e.js"
+  ]
+}
