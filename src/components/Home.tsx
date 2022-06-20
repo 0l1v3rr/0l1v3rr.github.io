@@ -59,7 +59,6 @@ const About = () => {
                 <span className="text-yellow-300"> Spring</span>, 
                 <span className="text-yellow-300"> Spring Boot</span>,
                 <span className="text-yellow-300"> Gin</span>,
-                <span className="text-yellow-300"> Gorm</span>
                 <br />
                 <span className="underline">Frontend</span>:
                 <span className="text-yellow-300"> React</span>, 
@@ -74,11 +73,10 @@ const About = () => {
                 <span className="underline">Other</span>:&nbsp;&nbsp;&nbsp;
                 <span className="text-yellow-300"> Docker</span>, 
                 <span className="text-yellow-300"> Git</span>,
-                <span className="text-yellow-300"> Maven</span>
             </span>
 
             <span className="text-gray-300">
-                If you'd like to know more, please visit my socials or contact me! <br />
+                If you'd like to know more, visit my socials or contact me! <br />
                 Thanks!
             </span>
         </div>

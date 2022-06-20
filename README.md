@@ -1,5 +1,5 @@
 # 0l1v3rr - Personal Website
-This is a MacOS Terminal like responsive personal website.  
+This is a macOS Terminal-like responsive personal website.  
 The site is deployed to GitHub pages. You can visit it by clicking [here](https://0l1v3rr.github.io/).
 
 <img src="./img/screenshot1.jpg" alt="screenshot">
