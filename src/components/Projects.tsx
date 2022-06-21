@@ -18,22 +18,26 @@ const sleep = (ms:number) => new Promise(
 
 const Projects = () => {
     const [searchParams, setSearchParams] = useSearchParams();
+    
     const category = searchParams.get("category");
-
+    
     const [isLoaded, setIsLoaded] = useState(false);
+    const [cmdLoaded, setCmdLoaded] = useState(false);
 
     useEffect(() => {
         (async () => {
-            await sleep(700);
+            await sleep(1000);
+            setCmdLoaded(true);
+            await sleep(710);
             setIsLoaded(true);
         })();
     });
     
     return (
         <>
-            <div className="ml-2 mb-1">
+            <div className="ml-2 mb-1 flex items-start gap-1">
                 <Prompt page="projects" />
-                <Command command="projects" />
+                {cmdLoaded && <Command command="projects" />}
             </div>
 
             {isLoaded && <ProjectContent category={category} />}

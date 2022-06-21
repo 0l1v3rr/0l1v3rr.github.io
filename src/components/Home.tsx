@@ -9,9 +9,12 @@ const sleep = (ms:number) => new Promise(
 
 const Home = () => {
     const [isLoaded, setIsLoaded] = useState(false);
+    const [cmdLoaded, setCmdLoaded] = useState(false);
 
     useEffect(() => {
         (async () => {
+            await sleep(1000);
+            setCmdLoaded(true);
             await sleep(510);
             setIsLoaded(true);
         })();
@@ -19,9 +22,9 @@ const Home = () => {
 
     return (
         <>
-            <div className="ml-2 mb-1">
+            <div className="ml-2 mb-1 flex items-start gap-1">
                 <Prompt page="home" />
-                <Command command="about" />
+                {cmdLoaded && <Command command="about" />}
             </div>
 
             {isLoaded && <About />}

@@ -11,10 +11,10 @@ const ContactForm = () => {
     const handleSubmit = () => {
         axios.post('https://discord.com/api/webhooks/987716233690484779/8PAgX-gq81c6QJ7vToUyXrhZQWR32r3J1P9ji-eHIBaDJ1i33697hnecT0YUSUF_uDBc', {
             content: `**${name}**:\`\`\`${message}\`\`\``
-        }).then(_ => {
+        }).then(() => {
             setErrorMessage('');
             setSuccessMessage('Your message has been sent successfully.');
-        }).catch(err => {
+        }).catch(() => {
             setErrorMessage('An unknown error happend.');
             setSuccessMessage('');
         });

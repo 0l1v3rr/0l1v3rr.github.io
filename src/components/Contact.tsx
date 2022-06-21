@@ -12,19 +12,22 @@ const sleep = (ms:number) => new Promise(
 
 const Contact = () => {
     const [isLoaded, setIsLoaded] = useState(false);
+    const [cmdLoaded, setCmdLoaded] = useState(false);
 
     useEffect(() => {
         (async () => {
-            await sleep(510);
+            await sleep(1000);
+            setCmdLoaded(true);
+            await sleep(700);
             setIsLoaded(true);
         })();
     });
 
     return (
         <>
-            <div className="ml-2 mb-1">
+            <div className="ml-2 mb-1 flex items-start gap-1">
                 <Prompt page="contact" />
-                <Command command="contact" />
+                {cmdLoaded && <Command command="contact" />}
             </div>
 
             {isLoaded && <ContactContent />}
