@@ -16,7 +16,7 @@ const Contact = () => {
 
     useEffect(() => {
         (async () => {
-            await sleep(1000);
+            await sleep(500);
             setCmdLoaded(true);
             await sleep(700);
             setIsLoaded(true);
