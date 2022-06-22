@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.9599245c.css",
-    "main.js": "/static/js/main.aec07ac3.js",
+    "main.css": "/static/css/main.b12c6bc7.css",
+    "main.js": "/static/js/main.825e1fd9.js",
     "static/media/bigsur.jpg": "/static/media/bigsur.bad6fc918ed831c562d5.jpg",
     "index.html": "/index.html",
-    "main.9599245c.css.map": "/static/css/main.9599245c.css.map",
-    "main.aec07ac3.js.map": "/static/js/main.aec07ac3.js.map"
+    "main.b12c6bc7.css.map": "/static/css/main.b12c6bc7.css.map",
+    "main.825e1fd9.js.map": "/static/js/main.825e1fd9.js.map"
   },
   "entrypoints": [
-    "static/css/main.9599245c.css",
-    "static/js/main.aec07ac3.js"
+    "static/css/main.b12c6bc7.css",
+    "static/js/main.825e1fd9.js"
   ]
 }
