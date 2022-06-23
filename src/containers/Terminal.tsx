@@ -1,12 +1,13 @@
 import Home from "../components/Home";
 
 import { Route, Routes, Link, useLocation } from "react-router-dom";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
 
 const Terminal = () => {
     const { pathname } = useLocation();
+    const [isFullScreen, setIsFullScreen] = useState(false);
 
     const container = useRef<HTMLDivElement>(null);
 
@@ -14,9 +15,19 @@ const Terminal = () => {
     const inactiveLinkClasses = `text-gray-400 text-sm mx-4 sm:mx-6 md:mx-10 py-3 cursor-pointer 
         hover:text-gray-300 transition-all duration-300`;
 
+    useEffect(() => {
+        container!.current!.onfullscreenchange = (e) => setIsFullScreen(current => !current);
+    });
+
     const enterFullScreen = () => {
         if(container?.current?.requestFullscreen) {
             container?.current?.requestFullscreen();
+        }
+    };
+
+    const exitFullScreen = () => {
+        if(document.fullscreenEnabled) {
+            document.exitFullscreen();
         }
     };
 
@@ -36,9 +47,12 @@ const Terminal = () => {
                         cursor-pointer duration-300 rounded-full" onClick={closeWindow} />
                     <div className="block w-3 h-3 bg-yellow-400 transition-all hover:bg-yellow-300 
                         cursor-pointer duration-300 rounded-full" />
-                    <div className="block w-3 h-3 bg-green-500 transition-all 
+                    {!isFullScreen && <div className="block w-3 h-3 bg-green-500 transition-all 
                         hover:bg-green-400 cursor-pointer duration-300 rounded-full" 
-                        onClick={enterFullScreen} />
+                        onClick={enterFullScreen} />}
+                    {isFullScreen && <div className="block w-3 h-3 bg-green-500 transition-all 
+                        hover:bg-green-400 cursor-pointer duration-300 rounded-full" 
+                        onClick={exitFullScreen} />}
                 </div>
                 
                 <div className="flex items-center justify-center">
