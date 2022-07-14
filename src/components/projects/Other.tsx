@@ -15,6 +15,16 @@ const Other = () => {
 
             <Project
                 project={{
+                    url: "https://github.com/0l1v3rr/creek",
+                    title: "Creek",
+                    description: "🌊 A fast and easy-to-use streams library for Golang.",
+                    category: "library",
+                    techStack: [ "Go" ]
+                }}
+            />
+
+            <Project
+                project={{
                     url: "https://github.com/0l1v3rr/subnet-calculator",
                     title: "Subnet Calculator",
                     description: "🖨️ A simple command-line tool to calculate IPv4 subnets.",

@@ -24,7 +24,7 @@ const Home = () => {
         <>
             <div className="ml-2 mb-1 flex items-start gap-1">
                 <Prompt page="home" />
-                {cmdLoaded && <Command command="about" />}
+                {cmdLoaded && <Command command="whoami" />}
             </div>
 
             {isLoaded && <About />}
@@ -40,7 +40,7 @@ const About = () => {
             <span className="text-gray-300">
                 <span className="text-gray-200 font-bold">- About Me</span> <br />
 
-                My name is <span className="text-lime-400">Olivér</span>, it's nice to e-meet you!<br />
+                My name is <span className="text-lime-400">Olivér</span>, great to see you here!<br />
                 I'm a passionate <span className="text-lime-400">Full-Stack Developer</span> from <span className="text-lime-400">Hungary</span>.<br />
             </span>
 
@@ -49,8 +49,7 @@ const About = () => {
 
                 My ultimate choice is <span className="text-emerald-400">Java</span>, 
                 but I love <span className="text-emerald-400">Go</span> as well. <br />
-                On the client-side, I work with <span className="text-emerald-400">JavaScript </span>
-                and <span className="text-emerald-400">TypeScript</span>. <br />
+                On the client-side, I prefer <span className="text-emerald-400">TypeScript</span>. <br />
             </span>
 
             <span className="text-gray-300">
@@ -61,25 +60,21 @@ const About = () => {
                 <span className="underline">Backend</span>:&nbsp;
                 <span className="text-yellow-300"> Spring</span>, 
                 <span className="text-yellow-300"> Spring Boot</span>,
-                <span className="text-yellow-300"> Gin</span>,
+                <span className="text-yellow-300"> Gin</span>
                 <br />
                 <span className="underline">Frontend</span>:
                 <span className="text-yellow-300"> React</span>, 
                 <span className="text-yellow-300"> Svelte </span>and
-                <span className="text-yellow-300"> SvelteKit</span>,
-                <span className="text-yellow-300"> Tailwind</span>
-                <br />
-                <span className="underline">Database</span>:
-                <span className="text-yellow-300"> MySQL</span>, 
-                <span className="text-yellow-300"> Postgres</span>
+                <span className="text-yellow-300"> SvelteKit</span>
                 <br />
                 <span className="underline">Other</span>:&nbsp;&nbsp;&nbsp;
                 <span className="text-yellow-300"> Docker</span>, 
-                <span className="text-yellow-300"> Git</span>,
+                <span className="text-yellow-300"> MySQL</span>, 
+                <span className="text-yellow-300"> Postgres</span>
             </span>
 
             <span className="text-gray-300">
-                If you'd like to know more, visit my socials or contact me! <br />
+                If you'd like to know more, visit my <a target="_blank" href="https://github.com/0l1v3rr" className="underline">GitHub</a>! <br />
                 Thanks!
             </span>
         </div>

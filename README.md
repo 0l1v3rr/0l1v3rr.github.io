@@ -10,7 +10,6 @@ The site is deployed to GitHub pages. You can visit it by clicking [here](https:
 - React Icons
 - Tailwind
 - TypeScript
-- Axios
 
 ## Building from source
 You can build this app from the source very easily.  

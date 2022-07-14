@@ -44,15 +44,16 @@ const Terminal = () => {
                 border-gray-900 bg-white/[0.02]">
                 <div className="hidden sm:flex gap-2 items-center p-4 pr-10">
                     <div className="block w-3 h-3 bg-red-600 transition-all hover:bg-red-500 
-                        cursor-pointer duration-300 rounded-full" onClick={closeWindow} />
-                    <div className="block w-3 h-3 bg-yellow-400 transition-all hover:bg-yellow-300 
-                        cursor-pointer duration-300 rounded-full" />
+                        cursor-pointer duration-300 rounded-full border border-solid border-red-800" 
+                        onClick={closeWindow} />
+                    <div className="block w-3 h-3 bg-gray-700 transition-all hover:bg-gray-700 
+                        duration-300 rounded-full border border-solid border-gray-900" />
                     {!isFullScreen && <div className="block w-3 h-3 bg-green-500 transition-all 
-                        hover:bg-green-400 cursor-pointer duration-300 rounded-full" 
-                        onClick={enterFullScreen} />}
+                        hover:bg-green-400 cursor-pointer duration-300 rounded-full border border-solid 
+                        border-green-700" onClick={enterFullScreen} />}
                     {isFullScreen && <div className="block w-3 h-3 bg-green-500 transition-all 
-                        hover:bg-green-400 cursor-pointer duration-300 rounded-full" 
-                        onClick={exitFullScreen} />}
+                        hover:bg-green-400 cursor-pointer duration-300 rounded-full border border-solid 
+                        border-green-700" onClick={exitFullScreen} />}
                 </div>
                 
                 <div className="flex items-center justify-center">

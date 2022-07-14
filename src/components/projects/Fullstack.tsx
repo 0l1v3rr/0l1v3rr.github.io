@@ -15,11 +15,11 @@ const Fullstack = () => {
 
             <Project
                 project={{
-                    url: "https://github.com/0l1v3rr/gourly",
-                    title: "gourly",
-                    description: "✂️ A very simple URL shortener.",
+                    url: "https://github.com/0l1v3rr/todo",
+                    title: "Advanced ToDo",
+                    description: "✔️ This is an advanced and over-engineered full-stack to-do application.",
                     category: "fullstack",
-                    techStack: [ "Go", "Gin", "Gorm", "React" ]
+                    techStack: [ "Go", "Gin", "React", "TypeScript" ]
                 }}
             />
         </>
