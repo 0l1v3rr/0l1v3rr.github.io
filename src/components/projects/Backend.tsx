@@ -5,7 +5,7 @@ const Backend = () => {
         <>
             <Project 
                 project={{
-                    url: "https://github.com/0l1v3rr/bookstore-api",
+                    url: "https://github.com/0l1v3rr/bookstore-api?ref=0l1v3rr.github.io",
                     title: "Bookstore API",
                     description: "📑 A simple REST API that returns some sample data.",
                     category: "backend",

@@ -5,7 +5,7 @@ const Frontend = () => {
         <>
             <Project
                 project={{
-                    url: "https://github.com/0l1v3rr/0l1v3rr.github.io",
+                    url: "https://github.com/0l1v3rr/0l1v3rr.github.io?ref=0l1v3rr.github.io",
                     title: "Portfolio",
                     description: "💻 My portfolio website",
                     category: "frontend",
@@ -15,7 +15,7 @@ const Frontend = () => {
 
             <Project
                 project={{
-                    url: "https://github.com/0l1v3rr/vlsm-calculator",
+                    url: "https://github.com/0l1v3rr/vlsm-calculator?ref=0l1v3rr.github.io",
                     title: "VLSM Calulator",
                     description: "📝 Variable Length Subnet Mask Calculator",
                     category: "frontend",
@@ -25,7 +25,7 @@ const Frontend = () => {
 
             <Project
                 project={{
-                    url: "https://github.com/0l1v3rr/sorting-visualizer",
+                    url: "https://github.com/0l1v3rr/sorting-visualizer?ref=0l1v3rr.github.io",
                     title: "Sorting Visualizer",
                     description: "〽️ A simple web tool to visualize the different sorting algorithms.",
                     category: "frontend",

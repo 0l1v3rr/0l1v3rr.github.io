@@ -5,7 +5,7 @@ const Fullstack = () => {
         <>
             <Project
                 project={{
-                    url: "https://github.com/0l1v3rr/scrumw",
+                    url: "https://github.com/0l1v3rr/scrumw?ref=0l1v3rr.github.io",
                     title: "scrumw",
                     description: "🚩scrumw - a free, open-source, self-hosted scrum & project management system.",
                     category: "fullstack",
@@ -15,7 +15,7 @@ const Fullstack = () => {
 
             <Project
                 project={{
-                    url: "https://github.com/0l1v3rr/todo",
+                    url: "https://github.com/0l1v3rr/todo?ref=0l1v3rr.github.io",
                     title: "Advanced ToDo",
                     description: "✔️ This is an advanced and over-engineered full-stack to-do application.",
                     category: "fullstack",

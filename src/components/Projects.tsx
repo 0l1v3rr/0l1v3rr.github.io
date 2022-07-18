@@ -28,7 +28,7 @@ const Projects = () => {
         (async () => {
             await sleep(500);
             setCmdLoaded(true);
-            await sleep(710);
+            await sleep(700);
             setIsLoaded(true);
         })();
     });

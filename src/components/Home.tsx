@@ -15,7 +15,7 @@ const Home = () => {
         (async () => {
             await sleep(500);
             setCmdLoaded(true);
-            await sleep(510);
+            await sleep(700);
             setIsLoaded(true);
         })();
     });

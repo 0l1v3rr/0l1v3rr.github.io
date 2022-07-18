@@ -7,12 +7,19 @@ interface CommandType {
 
 const Command:FC<CommandType> = (props) => {
     return (
-        <div className="text-orange-300 ml-1">
-            <TypeAnimation 
-                cursor={false}
-                sequence={[props.command]}
-                repeat={1}
-            />
+        <div className="relative">
+            <div className="text-orange-300 ml-1 absolute z-20">
+                <TypeAnimation 
+                    cursor={false}
+                    sequence={[props.command]}
+                    repeat={1}
+                    className="type"
+                />
+            </div>
+
+            <div className="text-gray-600 ml-1 absolute z-10">
+                {props.command}
+            </div>
         </div>
     );
 };
