@@ -52,8 +52,8 @@ const Terminal = () => {
                     <div className="block w-3 h-3 bg-red-500 transition-all hover:bg-red-400 
                         cursor-pointer duration-300 rounded-full border border-solid border-red-800" 
                         onClick={closeWindow} />
-                    <div className="block w-3 h-3 bg-yellow-400 transition-all hover:bg-yellow-200 
-                        duration-300 rounded-full border border-solid border-yellow-600 cursor-pointer" />
+                    <div className="block w-3 h-3 bg-gray-600 transition-all
+                        duration-300 rounded-full border border-solid border-gray-800" />
                     {!isFullScreen && <div className="block w-3 h-3 bg-green-500 transition-all 
                         hover:bg-green-400 cursor-pointer duration-300 rounded-full border border-solid 
                         border-green-700" onClick={enterFullScreen} />}
