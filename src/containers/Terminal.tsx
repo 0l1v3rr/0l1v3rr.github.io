@@ -33,6 +33,10 @@ const Terminal = () => {
     };
 
     const closeWindow = () => {
+        if(document.fullscreenEnabled) {
+            document.exitFullscreen();
+        }
+        
         container?.current?.classList.add('scale-0');
         container?.current?.classList.add('translate-y-full');
     };
