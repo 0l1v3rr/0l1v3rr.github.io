@@ -65,19 +65,19 @@ const Terminal = () => {
                 <div className="flex items-center justify-center w-full">
                     <Link to="/">
                         <div className={pathname === "/" ? activeLinkClasses : inactiveLinkClasses}>
-                            ../home (-zsh)
+                            ./home <span className="text-gray-400">(-web)</span>
                         </div>
                     </Link>
 
                     <Link to="/projects">
                         <div className={pathname === "/projects" ? activeLinkClasses : inactiveLinkClasses}>
-                            ../projects (-zsh)
+                            ./projects <span className="text-gray-400">(-web)</span>
                         </div>
                     </Link>
 
                     <Link to="/contact">
                         <div className={pathname === "/contact" ? activeLinkClasses : inactiveLinkClasses}>
-                            ../contact (-zsh)
+                            ./contact <span className="text-gray-400">(-web)</span>
                         </div>
                     </Link>
 
