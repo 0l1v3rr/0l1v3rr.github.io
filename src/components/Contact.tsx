@@ -71,14 +71,6 @@ const ContactContent = () => {
                     <SiCodersrank />
                 </a>
             </div>
-
-            <div className="flex gap-3 text-lg mt-2 items-center bg-white/[0.07] px-3 py-1 w-fit rounded-lg">
-                <span className="text-gray-400 text-sm">LeetCode: </span>
-                <a className="text-amber-500 transition-all duration-300 
-                    hover:text-amber-400" target="_blank" href="https://leetcode.com/0l1v3rr/">
-                    <SiLeetcode />
-                </a>
-            </div>
         </div>
     );
 }

@@ -5,6 +5,16 @@ const Frontend = () => {
         <>
             <Project
                 project={{
+                    url: "https://github.com/0l1v3rr/react-initializr?ref=0l1v3rr.github.io",
+                    title: "React Initializr",
+                    description: "📦 A web-based boilerplate-free React Project generator.",
+                    category: "cli-app",
+                    techStack: [ "TypeScript, React, Tailwind" ]
+                }}
+            />
+            
+            <Project
+                project={{
                     url: "https://github.com/0l1v3rr/0l1v3rr.github.io?ref=0l1v3rr.github.io",
                     title: "Portfolio",
                     description: "💻 My portfolio website",
