@@ -20,7 +20,17 @@ const Frontend = () => {
           title: "Portfolio",
           description: "💻 My portfolio website",
           category: "frontend",
-          techStack: ["React", "TypeScript", "Tailwind"],
+          techStack: ["TypeScript, React, Tailwind"],
+        }}
+      />
+
+      <Project
+        project={{
+          url: "https://github.com/0l1v3rr/hangman-game?ref=0l1v3rr.github.io",
+          title: "Hangman Game",
+          description: "🪢 A web-based hangman game with React",
+          category: "frontend",
+          techStack: ["TypeScript, React, Tailwind"],
         }}
       />
 
