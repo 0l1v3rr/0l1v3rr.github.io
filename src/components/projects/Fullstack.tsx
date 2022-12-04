@@ -5,6 +5,17 @@ const Fullstack = () => {
     <>
       <Project
         project={{
+          url: "https://github.com/0l1v3rr/github-readme-tech-stack?ref=0l1v3rr.github.io",
+          title: "GitHub README Tech Stack",
+          description:
+            "🪄 Dynamically generated, customizable technologies cards for your GitHub README.",
+          category: "fullstack",
+          techStack: ["TypeScript", "Express", "React", "Tailwind"],
+        }}
+      />
+
+      <Project
+        project={{
           url: "https://github.com/0l1v3rr/scrumw?ref=0l1v3rr.github.io",
           title: "scrumw",
           description:
