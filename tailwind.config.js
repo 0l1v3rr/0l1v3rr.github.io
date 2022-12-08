@@ -29,6 +29,21 @@ module.exports = {
         "fira-code": ["Fira Code", "monospace"],
         segoe: "Segoe UI",
       },
+      keyframes: {
+        blink: {
+          "0%": { opacity: 0 },
+          "49%": { opacity: 0 },
+          "50%": { opacity: 1 },
+          "98%": { opacity: 1 },
+          "100%": { opacity: 0 },
+        },
+      },
+      animation: {
+        blink: "blink 1.5s linear infinite",
+      },
+      boxShadow: {
+        "5xl": "0 10px 30px 0 rgba(0, 0, 0, 0.75)",
+      },
     },
   },
   plugins: [],
