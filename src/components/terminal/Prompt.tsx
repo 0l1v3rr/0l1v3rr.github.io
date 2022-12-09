@@ -13,7 +13,7 @@ const Prompt: FC<PromptProps> = (props) => {
           before:bg-kali-blue before:absolute before:top-1/4 before:left-0.5
           after:content[''] after:h-1/2 after:w-[1px] after:bg-kali-blue
           after:absolute after:left-0.5 after:translate-y-1/2 
-          before:-translate-y-[1px] select-none"
+          before:-translate-y-[1px] select-none font-bold"
       >
         <span className="text-kali-blue">(</span>
         <span className="text-kali-red">root💀kali</span>
@@ -27,7 +27,7 @@ const Prompt: FC<PromptProps> = (props) => {
           before:bg-kali-blue before:absolute before:top-[75%] before:left-0.5
           before:-translate-y-[1px] flex items-center gap-0"
       >
-        <span className="text-kali-red ml-0.5 select-none">#</span>
+        <span className="text-kali-red ml-0.5 select-none font-bold">#</span>
         <div
           className={`text-kali-gray text-[.8rem] relative 
             ${
