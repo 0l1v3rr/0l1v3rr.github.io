@@ -1,7 +1,10 @@
+import { useKeyboardInput } from "../../hooks/useKeyboardInput";
 import Prompt from "./Prompt";
 import TerminalTitle from "./TerminalTitle";
 
 const TerminalContainer = () => {
+  const promptText = useKeyboardInput();
+
   return (
     <section
       className="rounded-xl w-full h-full bg-black/[.8] 
@@ -11,7 +14,7 @@ const TerminalContainer = () => {
       <TerminalTitle />
 
       <div className="px-1 text-kali-gray text-sm w-full">
-        <Prompt text="te" showCursor={true} />
+        <Prompt text={promptText} showCursor={true} />
       </div>
     </section>
   );

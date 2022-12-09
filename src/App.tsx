@@ -9,7 +9,7 @@ const App = () => {
     >
       <Tray />
 
-      <main className="h-[86%] w-[60%]">
+      <main className="h-[86%] w-[95%] md:w-[80%] lg:w-[70%] xl:w-[60%]">
         <TerminalContainer />
       </main>
     </div>
