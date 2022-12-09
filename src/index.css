@@ -4,15 +4,15 @@
 
 @layer base {
   .terminal-scrollbar::-webkit-scrollbar {
-    @apply w-[.75rem]
+    @apply w-[.75rem];
   }
-  
+
   .terminal-scrollbar::-webkit-scrollbar-track {
-    @apply bg-kali-black/[.75]
+    @apply bg-kali-black/[.75];
   }
-  
+
   .terminal-scrollbar::-webkit-scrollbar-thumb {
     @apply bg-kali-gray/[.15] rounded-md transition-all border-[3px] 
-      border-solid border-transparent bg-clip-content
+      border-solid border-transparent bg-clip-content;
   }
 }
