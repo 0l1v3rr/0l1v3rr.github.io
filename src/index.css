@@ -24,3 +24,16 @@
     @apply font-bold text-kali-white;
   }
 }
+
+.project-frontend {
+  @apply hover:underline text-kali-green cursor-default whitespace-nowrap;
+}
+.project-backend {
+  @apply hover:underline text-kali-white cursor-default whitespace-nowrap;
+}
+.project-fullstack {
+  @apply hover:underline text-kali-yellow cursor-default whitespace-nowrap;
+}
+.project-other {
+  @apply hover:underline text-kali-cyan cursor-default whitespace-nowrap;
+}

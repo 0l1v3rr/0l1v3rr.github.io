@@ -1,12 +1,19 @@
+import { projects } from "./projects";
+
 const commands: Map<string, string> = new Map<string, string>();
 
 commands.set("motd", motdText());
 commands.set("whoami", "root");
 commands.set("touch", "Why would you touch anything?");
+commands.set("rm", "Why would you remove anything?");
+commands.set("cat", "Here's a cute cat for you! 😊");
 commands.set("about", aboutText());
 commands.set("pwd", "/");
+commands.set("projects", projectsText());
+commands.set("ls", projectsText());
 commands.set("github", openLink("https://github.com/0l1v3rr"));
 commands.set("linkedin", openLink("https://www.linkedin.com/in/0l1v3rr"));
+commands.set("repo", openLink("https://github.com/0l1v3rr/0l1v3rr.github.io"));
 commands.set("email", openLink("mailto:oliver.mrakovics@gmail.com"));
 commands.set(
   "codersrank",
@@ -26,6 +33,9 @@ export const getCommandByName = (name: string): string => {
     case "github":
       window.open("https://github.com/0l1v3rr", "_blank");
       break;
+    case "repo":
+      window.open("https://github.com/0l1v3rr/0l1v3rr.github.io", "_blank");
+      break;
     case "linkedin":
       window.open("https://www.linkedin.com/in/0l1v3rr", "_blank");
       break;
@@ -34,6 +44,9 @@ export const getCommandByName = (name: string): string => {
       break;
     case "codersrank":
       window.open("https://profile.codersrank.io/user/0l1v3rr/", "_blank");
+      break;
+    case "cat":
+      window.open("https://cataas.com/cat/cute", "_blank");
       break;
   }
 
@@ -88,9 +101,9 @@ function aboutText(): string {
     <br><br>
     Mentionable frameworks I work with:
     <br>
-    &nbsp; * Backend: Spring, Spring Boot, JPA
+    &nbsp; * <span class="terminal-bold">Backend</span>: Spring, Spring Boot, JPA
     <br>
-    &nbsp; * Frontend: React, Tailwind
+    &nbsp; * <span class="terminal-bold">Frontend</span>: React, Tailwind
     <br><br>
 
     Would you like to connect with me? Enter the 'socials' command!
@@ -103,4 +116,33 @@ function openLink(link: string): string {
       <a class="terminal-link" href="${link}" target="_blank" rel="noreferrer">
         ${link}</a>...
     `;
+}
+
+function projectsText(): string {
+  return `
+    ${projects
+      .map((project) => {
+        let projectCategory = "fullstack";
+        switch (project.category) {
+          case "backend":
+            projectCategory = "backend";
+            break;
+          case "frontend":
+            projectCategory = "frontend";
+            break;
+          case "other":
+            projectCategory = "other";
+            break;
+        }
+
+        return `
+        <a 
+          class="project-${projectCategory}"
+          href="${project.link}"
+          target="_blank"
+          rel="noreferrer"
+        >${project.name}</a>`;
+      })
+      .join("&nbsp;&nbsp;&nbsp;")}
+  `;
 }
