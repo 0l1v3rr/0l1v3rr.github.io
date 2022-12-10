@@ -38,7 +38,7 @@ const TerminalContainer = () => {
 
   return (
     <section
-      className="rounded-xl w-full h-full bg-black/[.8] 
+      className="rounded-xl w-full h-full bg-black/[.85] 
         border border-solid border-kali-black font-fira-code 
         text-sm shadow-5xl flex flex-col overflow-hidden"
     >

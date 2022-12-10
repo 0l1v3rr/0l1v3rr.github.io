@@ -17,6 +17,10 @@
   }
 
   .terminal-link {
-    @apply cursor-default hover:underline
+    @apply cursor-default hover:underline;
+  }
+
+  .terminal-bold {
+    @apply font-bold text-kali-white;
   }
 }

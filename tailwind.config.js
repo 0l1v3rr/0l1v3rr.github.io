@@ -31,11 +31,11 @@ module.exports = {
       },
       keyframes: {
         blink: {
-          "0%": { opacity: 0 },
-          "49%": { opacity: 0 },
-          "50%": { opacity: 1 },
-          "98%": { opacity: 1 },
-          "100%": { opacity: 0 },
+          "0%": { opacity: 1 },
+          "48%": { opacity: 1 },
+          "50%": { opacity: 0 },
+          "99%": { opacity: 0 },
+          "100%": { opacity: 1 },
         },
       },
       animation: {
