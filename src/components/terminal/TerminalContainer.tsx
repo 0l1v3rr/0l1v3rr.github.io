@@ -4,27 +4,29 @@ import Prompt from "./Prompt";
 import TerminalTitle from "./TerminalTitle";
 import { useScrollToBottom } from "../../hooks/useScrollToBottom";
 import PromptSession from "../../classes/prompt-session";
+import ResultDiv from "./ResultDiv";
 
 const TerminalContainer = () => {
   const bottomRef = useRef<HTMLDivElement>(null);
+  useScrollToBottom(bottomRef.current);
+
   const [prompts, setPrompts] = useState<PromptSession[]>([
     new PromptSession(),
   ]);
 
-  const enter = (result: string) => {
+  const handleEnterPress = () => {
     setPrompts((prev) => {
       prev[prev.length - 1].handleEnterClick(promptText);
-      return prev;
+      return [...prev, new PromptSession()];
     });
-    setPrompts((prev) => [...prev, new PromptSession()]);
   };
 
-  useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [prompts]);
+  useEffect(
+    () => bottomRef.current?.scrollIntoView({ behavior: "smooth" }),
+    [prompts]
+  );
 
-  const promptText = useKeyboardInput(enter);
-  useScrollToBottom(bottomRef.current);
+  const promptText = useKeyboardInput(handleEnterPress);
 
   return (
     <section
@@ -40,11 +42,16 @@ const TerminalContainer = () => {
       >
         {prompts.map((prompt) => {
           return (
-            <Prompt
-              text={prompt.enterPressed ? prompt.promptText : promptText}
-              showCursor={prompt.showCursor}
-              key={`prompt-${Math.random()}`}
-            />
+            <div key={`prompt-${Math.random()}`}>
+              <Prompt
+                text={prompt.enterPressed ? prompt.promptText : promptText}
+                showCursor={prompt.showCursor}
+              />
+
+              {prompt.result !== undefined && (
+                <ResultDiv text={prompt.result} />
+              )}
+            </div>
           );
         })}
 

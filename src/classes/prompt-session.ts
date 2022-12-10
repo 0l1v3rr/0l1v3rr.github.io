@@ -1,7 +1,10 @@
+import { getCommandByName } from "../const/commands";
+
 export default class PromptSession {
   public promptText: string;
   public showCursor: boolean;
   public enterPressed: boolean;
+  public result: string | undefined;
 
   public constructor() {
     this.promptText = "";
@@ -13,5 +16,9 @@ export default class PromptSession {
     this.enterPressed = true;
     this.promptText = text;
     this.showCursor = false;
+
+    if (this.promptText.trim() !== "" && this.promptText.trim() !== " ") {
+      this.result = getCommandByName(this.promptText);
+    }
   }
 }
