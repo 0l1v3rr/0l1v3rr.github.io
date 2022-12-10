@@ -4,10 +4,14 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        kali: "url('./assets/kali-wallpaper-1.jpg')",
+        // kali: "url('./assets/kali-wallpaper-1.jpg')",
+        kali: "url('./assets/kali-layers.png')",
       },
       colors: {
+        "kali-text-muted": "#7a7a7a",
         "kali-black": "#1F2229",
+        "kali-gray-dark": "#13141a",
+        "kali-border": "#272a34",
         "kali-gray": "#E6E6E6",
         "kali-white": "#FFFFFF",
         "kali-red": "#EC0101",
@@ -22,6 +26,7 @@ module.exports = {
         "kali-cyan-dark": "#49AEE6",
         "kali-blue": "#277FFF",
         "kali-blue-dark": "#367BF0",
+        "kali-blue-bg": "#2471f3",
         "kali-purple": "#8C42AB",
       },
       fontFamily: {
@@ -42,6 +47,7 @@ module.exports = {
       },
       boxShadow: {
         "5xl": "0 10px 30px 0 rgba(0, 0, 0, 0.75)",
+        terminal: "0 0 0 2px rgba(0, 0, 0, 0.16)",
       },
     },
   },

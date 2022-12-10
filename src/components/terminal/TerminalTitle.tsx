@@ -1,31 +1,43 @@
 import { BsTerminal } from "react-icons/bs";
-import { MdMinimize, MdClose } from "react-icons/md";
-import { VscChromeMaximize } from "react-icons/vsc";
+import { GrFormClose } from "react-icons/gr";
 
 const TerminalTitle = () => {
   return (
     <div
-      className="bg-black/[.5] rounded-tl-xl rounded-tr-xl 
+      className="bg-kali-black/[.70] rounded-tl-md rounded-tr-md 
         text-kali-gray font-segoe font-semibold flex items-center 
-        justify-between py-2.5 px-4 border-b border-solid border-black/[.1]
-        select-none shadow-md"
+        justify-between py-2.5 px-4 border-b-2 border-solid border-black/[.4]
+        select-none shadow-sm relative"
     >
-      <div className="text-base mr-8">
+      <div className="text-base">
         <BsTerminal />
       </div>
 
-      <div>root@kali: ~</div>
+      <div className="w-fit h-fit absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        root@kali: ~
+      </div>
 
-      <div className="text-sm flex items-center justify-center gap-3">
-        <span className="cursor-pointer hover:text-white">
-          <MdMinimize />
-        </span>
-        <span className="cursor-pointer hover:text-white">
-          <VscChromeMaximize />
-        </span>
-        <span className="cursor-pointer hover:text-white">
-          <MdClose />
-        </span>
+      <div className="text-sm flex items-center justify-center gap-2">
+        <div
+          className="w-4 h-4 bg-kali-gray-dark border 
+            border-solid border-black/[.3] rounded-full"
+        />
+
+        <div
+          className="w-4 h-4 bg-kali-gray-dark border 
+            border-solid border-black/[.3] rounded-full"
+        />
+
+        <div
+          className="cursor-pointer text-black w-4 h-4 bg-kali-blue-bg 
+            border border-solid border-black/[.5] rounded-full
+            font-bold hover:bg-kali-blue hover:text-kali-black
+            transition-all duration-150 text-base relative"
+        >
+          <div className="w-fit h-fit absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <GrFormClose />
+          </div>
+        </div>
       </div>
     </div>
   );

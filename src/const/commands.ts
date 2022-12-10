@@ -106,7 +106,9 @@ function aboutText(): string {
     &nbsp; * <span class="terminal-bold">Frontend</span>: React, Tailwind
     <br><br>
 
-    Would you like to connect with me? Enter the 'socials' command!
+    Would you like to connect with me? Enter the 'socials' command!<br>
+    Want to take a look at my projects? 
+    Enter the 'projects' command or visit my GitHub with the 'github' command!
   `;
 }
 

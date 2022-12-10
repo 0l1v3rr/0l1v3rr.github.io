@@ -1,12 +1,15 @@
 import { useCallback, useEffect, useState } from "react";
 
 export const useKeyboardInput = (
-  enterPress: (result: string) => void
+  enterPress: (result: string) => void,
+  clearInputs: () => void
 ): string => {
   const [result, setResult] = useState<string>("");
 
   const handleKeyPress = useCallback(
     (event: KeyboardEvent) => {
+      event.preventDefault();
+
       if (event.isComposing) {
         return;
       }
@@ -21,6 +24,12 @@ export const useKeyboardInput = (
       // ctrl + backspace hotkey
       if (event.ctrlKey && event.code === "Backspace") {
         setResult((prev) => prev.split(" ").slice(0, -1).join(" "));
+        return;
+      }
+
+      // ctrl + l hotkey
+      if (event.ctrlKey && event.code === "KeyL") {
+        clearInputs();
         return;
       }
 
@@ -40,7 +49,7 @@ export const useKeyboardInput = (
           break;
       }
     },
-    [enterPress, result]
+    [enterPress, result, clearInputs]
   );
 
   useEffect(() => {

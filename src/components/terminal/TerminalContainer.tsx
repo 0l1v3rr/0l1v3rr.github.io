@@ -29,24 +29,27 @@ const TerminalContainer = () => {
     });
   };
 
+  const promptText = useKeyboardInput(handleEnterPress, () => {
+    setPrompts([new PromptSession()]);
+    setIsMotdVisible(false);
+  });
+
   useEffect(
     () => bottomRef.current?.scrollIntoView({ behavior: "smooth" }),
-    [prompts]
+    [prompts, promptText]
   );
-
-  const promptText = useKeyboardInput(handleEnterPress);
 
   return (
     <section
-      className="rounded-xl w-full h-full bg-black/[.85] 
-        border border-solid border-kali-black font-fira-code 
-        text-sm shadow-5xl flex flex-col overflow-hidden"
+      className="rounded-md w-full h-full bg-kali-gray-dark/[.96] 
+        border border-solid border-kali-border font-fira-code 
+        text-sm shadow-terminal flex flex-col overflow-hidden cursor-default resize"
     >
       <TerminalTitle />
 
       <div
         className="px-1 text-kali-gray text-sm w-full h-full
-          overflow-y-auto terminal-scrollbar pb-2"
+          overflow-y-auto terminal-scrollbar pb-2 pt-1"
       >
         {isMotdVisible && <ResultDiv text={motdText()} />}
 
