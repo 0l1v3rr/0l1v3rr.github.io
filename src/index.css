@@ -15,4 +15,8 @@
     @apply bg-kali-gray/[.15] rounded-md transition-all border-[3px] 
       border-solid border-transparent bg-clip-content;
   }
+
+  .terminal-link {
+    @apply cursor-default hover:underline
+  }
 }

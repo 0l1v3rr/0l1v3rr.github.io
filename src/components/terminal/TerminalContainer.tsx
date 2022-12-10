@@ -5,8 +5,10 @@ import TerminalTitle from "./TerminalTitle";
 import { useScrollToBottom } from "../../hooks/useScrollToBottom";
 import PromptSession from "../../classes/prompt-session";
 import ResultDiv from "./ResultDiv";
+import { motdText } from "../../const/commands";
 
 const TerminalContainer = () => {
+  const [isMotdVisible, setIsMotdVisible] = useState<boolean>(true);
   const bottomRef = useRef<HTMLDivElement>(null);
   useScrollToBottom(bottomRef.current);
 
@@ -15,6 +17,12 @@ const TerminalContainer = () => {
   ]);
 
   const handleEnterPress = () => {
+    if (promptText.trim().toLowerCase().split(" ")[0] === "clear") {
+      setPrompts([new PromptSession()]);
+      setIsMotdVisible(false);
+      return;
+    }
+
     setPrompts((prev) => {
       prev[prev.length - 1].handleEnterClick(promptText);
       return [...prev, new PromptSession()];
@@ -40,6 +48,8 @@ const TerminalContainer = () => {
         className="px-1 text-kali-gray text-sm w-full h-full
           overflow-y-auto terminal-scrollbar pb-2"
       >
+        {isMotdVisible && <ResultDiv text={motdText()} />}
+
         {prompts.map((prompt) => {
           return (
             <div key={`prompt-${Math.random()}`}>

@@ -6,7 +6,7 @@ interface ResultDivProps {
 
 const ResultDiv: FC<ResultDivProps> = (props) => {
   return (
-    <div className="mb-3" dangerouslySetInnerHTML={{ __html: props.text }} />
+    <div className="mb-4" dangerouslySetInnerHTML={{ __html: props.text }} />
   );
 };
 

@@ -29,7 +29,7 @@ const Prompt: FC<PromptProps> = (props) => {
       >
         <span className="text-kali-red ml-0.5 select-none font-bold">#</span>
         <div
-          className={`text-kali-gray text-[.8rem] relative 
+          className={`text-kali-gray text-sm relative 
             ${
               props.showCursor &&
               `after:content[''] after:h-4 after:w-2 after:absolute 
