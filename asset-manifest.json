@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.cc35627d.css",
-    "main.js": "/static/js/main.48c52afe.js",
-    "static/media/bigsur.jpg": "/static/media/bigsur.bad6fc918ed831c562d5.jpg",
+    "main.css": "/static/css/main.7dcfc156.css",
+    "main.js": "/static/js/main.604f40a7.js",
+    "static/media/kali-layers.png": "/static/media/kali-layers.93cc5f44d84f31ea69f6.png",
     "index.html": "/index.html",
-    "main.cc35627d.css.map": "/static/css/main.cc35627d.css.map",
-    "main.48c52afe.js.map": "/static/js/main.48c52afe.js.map"
+    "main.7dcfc156.css.map": "/static/css/main.7dcfc156.css.map",
+    "main.604f40a7.js.map": "/static/js/main.604f40a7.js.map"
   },
   "entrypoints": [
-    "static/css/main.cc35627d.css",
-    "static/js/main.48c52afe.js"
+    "static/css/main.7dcfc156.css",
+    "static/js/main.604f40a7.js"
   ]
 }
