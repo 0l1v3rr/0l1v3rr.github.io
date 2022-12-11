@@ -1,41 +1,35 @@
-# 0l1v3rr - Personal Website
+<h1><a href="https://0l1v3rr.github.io/" target="_blank">0l1v3rr - Terminal Website</a></h1>
 
-This is a macOS Terminal-like responsive personal website.  
-The site is deployed to GitHub pages. You can visit it by clicking [here](https://0l1v3rr.github.io/).
+This is a Kali Linux Terminal-like personal website.  
 
-## Tech Stack
+<img src="./screenshots/screenshot.png" alt="screenshot">
 
-- React
-- React Router
-- React Icons
-- Tailwind
-- TypeScript
+<hr>
+
+## Features
+- Kali Linux-like interface
+- Fun commands
+- Tab autocomplete
+- Hotkeys
+- Responsiveness
+- Interactive UI
+
+<hr>
+
+[![My Tech Stack](https://github-readme-tech-stack.vercel.app/api/cards?title=This%20Project's%20Tech%20Stack&lineCount=1&theme=github_dark&align=left&line1=typescript,typescript,auto;react,react,auto;tailwindcss,tailwind,auto;)](https://github.com/0l1v3rr/github-readme-tech-stack)
+
+<hr>
 
 ## Building from source
 
-You can build this app from the source very easily.  
-Clone this repository:
-
 ```sh
+# 1. Clone the repo
 git clone https://github.com/0l1v3rr/0l1v3rr.github.io.git
 cd 0l1v3rr.github.io
-```
 
-Install the necessary dependencies:
-
-```sh
+# 2. Install the necessary dependencies
 npm i
-```
 
-Run the application:
-
-```sh
+# 3. Run the app
 npm start
 ```
-
-## Useful resources:
-
-If you want to deploy your SPA to GitHub pages as I did, here are some useful links that may help you:
-
-- [https://github.com/gitname/react-gh-pages](https://github.com/gitname/react-gh-pages)
-- [https://github.com/rafgraph/spa-github-pages](https://github.com/rafgraph/spa-github-pages)
