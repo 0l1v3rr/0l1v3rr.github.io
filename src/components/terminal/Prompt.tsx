@@ -1,4 +1,5 @@
-import { FC } from "react";
+import { FC, useState, useCallback } from "react";
+import { getCommandNames } from "../../const/commands";
 
 interface PromptProps {
   text: string;
@@ -6,6 +7,40 @@ interface PromptProps {
 }
 
 const Prompt: FC<PromptProps> = (props) => {
+  const [cmdNames] = useState<string[]>(getCommandNames());
+
+  const formatText = (text: string): string => {
+    const split = text.split(" ");
+
+    if (cmdNames.includes(split[0])) {
+      split[0] = `<span class="text-kali-green-dark relative">${split[0]}</span>`;
+    }
+
+    split[0] = `
+      ${split[0]}<span class="text-kali-text-muted/[.75] absolute">
+        ${getAutoCompleteText(text.trim())}
+      </span>
+    `;
+
+    return split.join("&nbsp;");
+  };
+
+  const getAutoCompleteText = useCallback(
+    (text: string): string => {
+      if (text === "") {
+        return "";
+      }
+
+      const filtered = [...cmdNames].filter((cmd) => cmd.startsWith(text));
+      if (text === filtered[0]) {
+        return "";
+      }
+
+      return filtered.length > 0 ? filtered[0].slice(text.length) : "";
+    },
+    [cmdNames]
+  );
+
   return (
     <div className="flex flex-col relative">
       <div
@@ -28,16 +63,22 @@ const Prompt: FC<PromptProps> = (props) => {
           before:-translate-y-[1px] flex items-center gap-0"
       >
         <span className="text-kali-red ml-0.5 select-none font-bold">#</span>
+
         <div
           className={`text-kali-gray text-sm relative 
             ${
               props.showCursor &&
               `after:content[''] after:h-4 after:w-2 after:absolute 
-            after:bg-kali-gray after:translate-y-[10%] after:animate-blink`
+              after:bg-kali-gray/[.8] after:translate-y-[10%] 
+              after:animate-blink after:text-black`
             }`}
         >
-          <span className="select-none">&nbsp;</span>
-          {`${props.text}`}
+          <span
+            className="ml-2"
+            dangerouslySetInnerHTML={{
+              __html: formatText(props.text),
+            }}
+          />
         </div>
       </div>
     </div>

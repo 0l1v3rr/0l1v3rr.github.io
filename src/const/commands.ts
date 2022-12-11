@@ -53,6 +53,15 @@ export const getCommandByName = (name: string): string => {
   return commands.get(name) || `${name}: command not found`;
 };
 
+export const getCommandNames = (): string[] => {
+  const commandNames: string[] = ["clear"];
+  for (const entry of Array.from(commands.entries())) {
+    commandNames.push(entry[0]);
+  }
+
+  return commandNames.sort();
+};
+
 export function motdText(): string {
   return `
     Welcome to 0l1v3rr.github.io!<br>
