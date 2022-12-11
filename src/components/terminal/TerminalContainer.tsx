@@ -9,6 +9,9 @@ import { motdText } from "../../const/commands";
 
 const TerminalContainer = () => {
   const [isMotdVisible, setIsMotdVisible] = useState<boolean>(true);
+  const [terminalClasses, setTerminalClasses] = useState<string>(
+    "scale-100 opacity-100"
+  );
   const bottomRef = useRef<HTMLDivElement>(null);
   useScrollToBottom(bottomRef.current);
 
@@ -41,11 +44,14 @@ const TerminalContainer = () => {
 
   return (
     <section
-      className="rounded-md w-full h-full bg-kali-gray-dark/[.96] 
+      className={`rounded-md w-full h-full bg-kali-gray-dark/[.96] 
         border border-solid border-kali-border font-fira-code 
-        text-sm shadow-terminal flex flex-col overflow-hidden cursor-default resize"
+        text-sm shadow-terminal flex flex-col overflow-hidden 
+        cursor-default resize ${terminalClasses} transition-all duration-100`}
     >
-      <TerminalTitle />
+      <TerminalTitle
+        closeTerminal={() => setTerminalClasses("scale-0 opacity-0")}
+      />
 
       <div
         className="px-1 text-kali-gray text-sm w-full h-full

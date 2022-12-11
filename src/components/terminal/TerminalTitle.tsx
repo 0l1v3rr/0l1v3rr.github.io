@@ -1,7 +1,12 @@
+import { FC } from "react";
 import { BsTerminal } from "react-icons/bs";
 import { GrFormClose } from "react-icons/gr";
 
-const TerminalTitle = () => {
+interface TerminalTitleProps {
+  closeTerminal: () => void;
+}
+
+const TerminalTitle: FC<TerminalTitleProps> = (props) => {
   return (
     <div
       className="bg-kali-black/[.70] rounded-tl-md rounded-tr-md 
@@ -28,7 +33,9 @@ const TerminalTitle = () => {
             border-solid border-black/[.3] rounded-full"
         />
 
-        <div
+        <button
+          type="button"
+          onClick={props.closeTerminal}
           className="cursor-pointer text-black w-4 h-4 bg-kali-blue-bg 
             border border-solid border-black/[.5] rounded-full
             font-bold hover:bg-kali-blue hover:text-kali-black
@@ -37,7 +44,7 @@ const TerminalTitle = () => {
           <div className="w-fit h-fit absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
             <GrFormClose />
           </div>
-        </div>
+        </button>
       </div>
     </div>
   );

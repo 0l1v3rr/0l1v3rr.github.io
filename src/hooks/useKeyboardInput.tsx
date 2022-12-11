@@ -1,10 +1,12 @@
 import { useCallback, useEffect, useState } from "react";
+import { getCommandNames } from "../const/commands";
 
 export const useKeyboardInput = (
   enterPress: (result: string) => void,
   clearInputs: () => void
 ): string => {
   const [result, setResult] = useState<string>("");
+  const [cmdNames] = useState<string[]>(getCommandNames());
 
   const handleKeyPress = useCallback(
     (event: KeyboardEvent) => {
@@ -18,6 +20,18 @@ export const useKeyboardInput = (
       if (event.code === "Enter") {
         enterPress(result);
         setResult("");
+        return;
+      }
+
+      // tab press (autocomplete)
+      if (event.code === "Tab") {
+        if (result === "") {
+          return;
+        }
+
+        const filtered = [...cmdNames].filter((cmd) => cmd.startsWith(result));
+
+        setResult((prev) => (filtered.length > 0 ? filtered[0] : prev));
         return;
       }
 
