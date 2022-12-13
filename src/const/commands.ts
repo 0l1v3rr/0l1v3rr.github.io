@@ -9,6 +9,7 @@ commands.set("rm", "Why would you remove anything?");
 commands.set("cat", "Here's a cute cat for you! 😊");
 commands.set("about", aboutText());
 commands.set("pwd", "/");
+commands.set("date", new Date().toLocaleString());
 commands.set("projects", projectsText());
 commands.set("kali", kaliLogo());
 commands.set("ls", projectsText());
@@ -104,9 +105,8 @@ function aboutText(): string {
 
     I'm a passionate <span class="terminal-bold">Full-Stack Developer</span> from <span class="terminal-bold">Hungary</span>.
     <br>
-    My ultimate language of choice is <span class="terminal-bold">Java</span>, but I love <span class="terminal-bold">Go</span> as well.
-    <br>
-    On the client-side, I prefer <span class="terminal-bold">TypeScript</span>.
+    Most of the time, I work with <span class="terminal-bold">Java</span> and <span class="terminal-bold">TypeScript</span>.
+    However, I often choose <span class="terminal-bold">Go</span> when it comes to building personal projects for fun.
 
     <br><br>
     Mentionable frameworks I work with:
