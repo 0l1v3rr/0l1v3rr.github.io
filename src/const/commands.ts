@@ -10,6 +10,7 @@ commands.set("cat", "Here's a cute cat for you! 😊");
 commands.set("about", aboutText());
 commands.set("pwd", "/");
 commands.set("projects", projectsText());
+commands.set("kali", kaliLogo());
 commands.set("ls", projectsText());
 commands.set("github", openLink("https://github.com/0l1v3rr"));
 commands.set("linkedin", openLink("https://www.linkedin.com/in/0l1v3rr"));
@@ -155,5 +156,76 @@ function projectsText(): string {
         >${project.name}</a>`;
       })
       .join("&nbsp;&nbsp;&nbsp;")}
+  `;
+}
+
+function kaliLogo() {
+  return `
+    <span class="text-kali-blue flex flex-col">
+      <span>${"..............".replaceAll(" ", "&nbsp;")}</span>
+      <span>${"            ..,;:ccc,.".replaceAll(" ", "&nbsp;")}</span>
+      <span>${"          ......''';lxO.".replaceAll(" ", "&nbsp;")}</span>
+      <span>${".....''''..........,:ld;".replaceAll(" ", "&nbsp;")}</span>
+      <span>${"           .';;;:::;,,.x,".replaceAll(" ", "&nbsp;")}</span>
+      <span>${"      ..'''.            0Xxoc:,.  ...".replaceAll(
+        " ",
+        "&nbsp;"
+      )}</span>
+      <span>${"  ....                ,ONkc;,;cokOdc',.".replaceAll(
+        " ",
+        "&nbsp;"
+      )}</span>
+      <span>${" .                   OMo           ':ddo.".replaceAll(
+        " ",
+        "&nbsp;"
+      )}</span>
+
+      <span>${"                    dMc               :OO;".replaceAll(
+        " ",
+        "&nbsp;"
+      )}</span>
+      <span>${"                    0M.                 .:o.".replaceAll(
+        " ",
+        "&nbsp;"
+      )}</span>
+      <span>${"                    ;Wd".replaceAll(" ", "&nbsp;")}</span>
+      <span>${"                     ;XO,".replaceAll(" ", "&nbsp;")}</span>
+      <span>${"                       ,d0Odlc;,..".replaceAll(
+        " ",
+        "&nbsp;"
+      )}</span>
+      <span>${"                            ..',;:cdOOd::,.".replaceAll(
+        " ",
+        "&nbsp;"
+      )}</span>
+      <span>${"                                     .:d;.':;.".replaceAll(
+        " ",
+        "&nbsp;"
+      )}</span>
+      <span>${"                                        'd,  .'".replaceAll(
+        " ",
+        "&nbsp;"
+      )}</span>
+      <span>${"                                          ;l   ..".replaceAll(
+        " ",
+        "&nbsp;"
+      )}</span>
+      <span>${"                                           .o".replaceAll(
+        " ",
+        "&nbsp;"
+      )}</span>
+      <span>${"                                             c".replaceAll(
+        " ",
+        "&nbsp;"
+      )}</span>
+      <span>${"                                             .'".replaceAll(
+        " ",
+        "&nbsp;"
+      )}</span>
+      <span>${"                                              .".replaceAll(
+        " ",
+        "&nbsp;"
+      )}</span>
+    </span>
   `;
 }
