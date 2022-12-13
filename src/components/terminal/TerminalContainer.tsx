@@ -6,8 +6,11 @@ import { useScrollToBottom } from "../../hooks/useScrollToBottom";
 import PromptSession from "../../classes/prompt-session";
 import ResultDiv from "./ResultDiv";
 import { motdText } from "../../const/commands";
+import { useIsMobile } from "../../hooks/useIsMobile";
 
 const TerminalContainer = () => {
+  const isMobile = useIsMobile();
+
   const [isMotdVisible, setIsMotdVisible] = useState<boolean>(true);
   const [terminalClasses, setTerminalClasses] = useState<string>(
     "scale-100 opacity-100"
@@ -57,6 +60,11 @@ const TerminalContainer = () => {
         className="px-1 text-kali-gray text-sm w-full h-full
           overflow-y-auto terminal-scrollbar pb-2 pt-1"
       >
+        {isMobile && (
+          <ResultDiv
+            text={`<span class="text-kali-red-dark">Err: This site does not work on devices without a physical keyboard.</span>`}
+          />
+        )}
         {isMotdVisible && <ResultDiv text={motdText()} />}
 
         {prompts.map((prompt) => {
