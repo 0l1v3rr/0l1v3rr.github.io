@@ -26,6 +26,11 @@ export const projects: Project[] = [
     category: "frontend",
   },
   {
+    name: "Wordle Clone",
+    link: "https://github.com/0l1v3rr/wordle-clone?ref=0l1v3rr.github.io",
+    category: "frontend",
+  },
+  {
     name: "Portfolio Website",
     link: "https://github.com/0l1v3rr/0l1v3rr.github.io?ref=0l1v3rr.github.io",
     category: "frontend",
