@@ -21,6 +21,11 @@ export const projects: Project[] = [
     category: "fullstack",
   },
   {
+    name: "React To-do",
+    link: "https://github.com/0l1v3rr/react-todo?ref=0l1v3rr.github.io",
+    category: "frontend",
+  },
+  {
     name: "Hangman Game",
     link: "https://github.com/0l1v3rr/hangman-game?ref=0l1v3rr.github.io",
     category: "frontend",
