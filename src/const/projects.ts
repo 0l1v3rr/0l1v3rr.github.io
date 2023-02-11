@@ -26,6 +26,11 @@ export const projects: Project[] = [
     category: "frontend",
   },
   {
+    name: "Pathfinding Visualizer",
+    link: "https://github.com/0l1v3rr/pathfinding-visualizer?ref=0l1v3rr.github.io",
+    category: "frontend",
+  },
+  {
     name: "Hangman Game",
     link: "https://github.com/0l1v3rr/hangman-game?ref=0l1v3rr.github.io",
     category: "frontend",
