@@ -4,9 +4,7 @@ export const useTimeFormat = (): string => {
   const [date, setDate] = useState<string>(formatDate(new Date()));
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setDate(formatDate(new Date()));
-    }, 1000);
+    const interval = setInterval(() => setDate(formatDate(new Date())), 1000);
 
     return () => clearInterval(interval);
   });

@@ -63,7 +63,7 @@ export const useKeyboardInput = (
           break;
       }
     },
-    [enterPress, result, clearInputs]
+    [enterPress, result, clearInputs, cmdNames]
   );
 
   useEffect(() => {
