@@ -103,10 +103,10 @@ function aboutText(): string {
     Hello, root!
     <br><br>
 
-    I'm a passionate <span class="terminal-bold">Full-Stack Developer</span> from <span class="terminal-bold">Hungary</span>.
+    I'm a passionate <span class="terminal-bold">Full-Stack Web Developer</span> from <span class="terminal-bold">Hungary</span>.
     <br>
     Most of the time, I work with <span class="terminal-bold">Java</span> and <span class="terminal-bold">TypeScript</span>.
-    However, I often choose <span class="terminal-bold">Go</span> when it comes to building personal projects for fun.
+    However, I often choose <span class="terminal-bold">Go</span> when it comes to building personal projects.
 
     <br><br>
     Mentionable frameworks I work with:
@@ -134,22 +134,9 @@ function projectsText(): string {
   return `
     ${projects
       .map((project) => {
-        let projectCategory = "fullstack";
-        switch (project.category) {
-          case "backend":
-            projectCategory = "backend";
-            break;
-          case "frontend":
-            projectCategory = "frontend";
-            break;
-          case "other":
-            projectCategory = "other";
-            break;
-        }
-
         return `
         <a 
-          class="project-${projectCategory}"
+          class="project-${project.category}"
           href="${project.link}"
           target="_blank"
           rel="noreferrer"

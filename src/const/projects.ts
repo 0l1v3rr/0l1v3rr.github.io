@@ -61,18 +61,8 @@ export const projects: Project[] = [
     category: "fullstack",
   },
   {
-    name: "Sorting Visualizer",
-    link: "https://github.com/0l1v3rr/sorting-visualizer?ref=0l1v3rr.github.io",
-    category: "frontend",
-  },
-  {
     name: "Subnet Calculator",
     link: "https://github.com/0l1v3rr/subnet-calculator?ref=0l1v3rr.github.io",
     category: "other",
-  },
-  {
-    name: "VLSM Calculator",
-    link: "https://github.com/0l1v3rr/vlsm-calculator?ref=0l1v3rr.github.io",
-    category: "frontend",
   },
 ];

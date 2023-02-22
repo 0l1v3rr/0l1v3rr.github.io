@@ -1,4 +1,5 @@
 import Tray from "./components/kali/Tray";
+import Main from "./components/layout/Main";
 import TerminalContainer from "./components/terminal/TerminalContainer";
 
 const App = () => {
@@ -9,9 +10,9 @@ const App = () => {
     >
       <Tray />
 
-      <main className="h-[86%] w-[95%] md:w-[80%] lg:w-[70%] xl:w-[60%]">
+      <Main>
         <TerminalContainer />
-      </main>
+      </Main>
     </div>
   );
 };
