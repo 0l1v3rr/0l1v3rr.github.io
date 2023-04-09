@@ -26,6 +26,11 @@ export const projects: Project[] = [
     category: "frontend",
   },
   {
+    name: "Workout Tracker",
+    link: "https://github.com/0l1v3rr/workout-tracker?ref=0l1v3rr.github.io",
+    category: "fullstack",
+  },
+  {
     name: "Pathfinding Visualizer",
     link: "https://github.com/0l1v3rr/pathfinding-visualizer?ref=0l1v3rr.github.io",
     category: "frontend",
