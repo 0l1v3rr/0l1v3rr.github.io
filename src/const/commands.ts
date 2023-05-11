@@ -26,6 +26,7 @@ commands.set(
   "Usage: [command]<br><br>github, linkedin, email, codersrank"
 );
 commands.set("help", helpText());
+commands.set("techstack", techStack());
 
 export const getCommandByName = (name: string): string => {
   name = name.trim().toLowerCase().split(" ")[0];
@@ -216,4 +217,8 @@ function kaliLogo() {
       )}</span>
     </span>
   `;
+}
+
+function techStack() {
+  return `<a href="https://github.com/0l1v3rr/github-readme-tech-stack" target="_blank"><img src="https://github-readme-tech-stack.vercel.app/api/cards?title=Tech%20Stack&align=center&titleAlign=center&fontSize=20&lineCount=2&theme=0l1v3rr&line1=laravel,laravel,auto;go,golang,00add8;docker,docker,auto;&line2=react,react,2d79c7;tailwindcss,tailwind,38bdf8;typescript,typescript,2d79c7;&width=420" alt="My Tech Stack" /></a>`;
 }
