@@ -4,7 +4,6 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        // kali: "url('./assets/kali-wallpaper-1.jpg')",
         kali: "url('./assets/kali-layers.png')",
       },
       colors: {

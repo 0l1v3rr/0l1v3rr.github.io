@@ -6,29 +6,14 @@ interface Project {
 
 export const projects: Project[] = [
   {
-    name: "CLI File Manager",
-    link: "https://github.com/0l1v3rr/cli-file-manager?ref=0l1v3rr.github.io",
-    category: "other",
-  },
-  {
-    name: "creek",
-    link: "https://github.com/0l1v3rr/creek?ref=0l1v3rr.github.io",
-    category: "other",
-  },
-  {
     name: "GitHub README Tech Stack",
     link: "https://github.com/0l1v3rr/github-readme-tech-stack?ref=0l1v3rr.github.io",
     category: "fullstack",
   },
   {
-    name: "React To-do",
-    link: "https://github.com/0l1v3rr/react-todo?ref=0l1v3rr.github.io",
-    category: "frontend",
-  },
-  {
-    name: "Workout Tracker",
-    link: "https://github.com/0l1v3rr/workout-tracker?ref=0l1v3rr.github.io",
-    category: "fullstack",
+    name: "CLI File Manager",
+    link: "https://github.com/0l1v3rr/cli-file-manager?ref=0l1v3rr.github.io",
+    category: "other",
   },
   {
     name: "Pathfinding Visualizer",
@@ -41,11 +26,6 @@ export const projects: Project[] = [
     category: "frontend",
   },
   {
-    name: "Wordle Clone",
-    link: "https://github.com/0l1v3rr/wordle-clone?ref=0l1v3rr.github.io",
-    category: "frontend",
-  },
-  {
     name: "Portfolio Website",
     link: "https://github.com/0l1v3rr/0l1v3rr.github.io?ref=0l1v3rr.github.io",
     category: "frontend",
@@ -54,11 +34,6 @@ export const projects: Project[] = [
     name: "Port Scanner",
     link: "https://github.com/0l1v3rr/port-scanner?ref=0l1v3rr.github.io",
     category: "other",
-  },
-  {
-    name: "React Initializr",
-    link: "https://github.com/0l1v3rr/react-initializr?ref=0l1v3rr.github.io",
-    category: "frontend",
   },
   {
     name: "scrumw",

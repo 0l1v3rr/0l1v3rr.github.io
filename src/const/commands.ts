@@ -105,15 +105,16 @@ function aboutText(): string {
 
     I'm a passionate <span class="terminal-bold">Full-Stack Web Developer</span> from <span class="terminal-bold">Hungary</span>.
     <br>
-    Most of the time, I work with <span class="terminal-bold">Java</span> and <span class="terminal-bold">TypeScript</span>.
-    However, I often choose <span class="terminal-bold">Go</span> when it comes to building personal projects.
+    Most of the time, I work with <span class="terminal-bold">TypeScript</span>, but I love <span class="terminal-bold">Go</span> as well.
 
     <br><br>
-    Mentionable frameworks I work with:
+    Mentionable tools I use on a daily basis:
     <br>
-    &nbsp; * <span class="terminal-bold">Backend</span>: Spring, Spring Boot, JPA
+    &nbsp; * <span class="terminal-bold">Backend</span>: Laravel, Golang
     <br>
-    &nbsp; * <span class="terminal-bold">Frontend</span>: React, Tailwind
+    &nbsp; * <span class="terminal-bold">Frontend</span>: React, TailwindCSS, TypeScript
+    <br>
+    &nbsp; * <span class="terminal-bold">Other</span>: Docker, Git
     <br><br>
 
     Would you like to connect with me? Enter the 'socials' command!<br>
