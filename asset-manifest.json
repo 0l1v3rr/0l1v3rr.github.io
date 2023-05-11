@@ -1,16 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.552b4dc1.css",
-    "main.js": "/static/js/main.c673f136.js",
+    "main.css": "/static/css/main.2036f67b.css",
+    "main.js": "/static/js/main.f7ca63b3.js",
     "static/media/kali-layers.png": "/static/media/kali-layers.93cc5f44d84f31ea69f6.png",
-    "static/media/terminal.png": "/static/media/terminal.0f6a580bfe21ea9e3b0e.png",
-    "static/media/kali-dragon-icon.svg": "/static/media/kali-dragon-icon.71aed7856e185ee2369708cf168fa80c.svg",
     "index.html": "/index.html",
-    "main.552b4dc1.css.map": "/static/css/main.552b4dc1.css.map",
-    "main.c673f136.js.map": "/static/js/main.c673f136.js.map"
+    "main.2036f67b.css.map": "/static/css/main.2036f67b.css.map",
+    "main.f7ca63b3.js.map": "/static/js/main.f7ca63b3.js.map"
   },
   "entrypoints": [
-    "static/css/main.552b4dc1.css",
-    "static/js/main.c673f136.js"
+    "static/css/main.2036f67b.css",
+    "static/js/main.f7ca63b3.js"
   ]
 }
