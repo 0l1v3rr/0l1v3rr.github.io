@@ -17,7 +17,7 @@ export default class PromptSession {
     this.promptText = text;
     this.showCursor = false;
 
-    if (this.promptText.trim() !== "" && this.promptText.trim() !== " ") {
+    if (this.promptText.trim() !== "") {
       this.result = getCommandByName(this.promptText);
     }
   }
