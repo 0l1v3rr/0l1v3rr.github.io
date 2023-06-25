@@ -36,11 +36,6 @@ export const projects: Project[] = [
     category: "other",
   },
   {
-    name: "scrumw",
-    link: "https://github.com/0l1v3rr/scrumw?ref=0l1v3rr.github.io",
-    category: "fullstack",
-  },
-  {
     name: "Subnet Calculator",
     link: "https://github.com/0l1v3rr/subnet-calculator?ref=0l1v3rr.github.io",
     category: "other",
