@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.2036f67b.css",
-    "main.js": "/static/js/main.24d6e251.js",
+    "main.js": "/static/js/main.8a0f5ec8.js",
     "static/media/kali-layers.png": "/static/media/kali-layers.93cc5f44d84f31ea69f6.png",
     "index.html": "/index.html",
     "main.2036f67b.css.map": "/static/css/main.2036f67b.css.map",
-    "main.24d6e251.js.map": "/static/js/main.24d6e251.js.map"
+    "main.8a0f5ec8.js.map": "/static/js/main.8a0f5ec8.js.map"
   },
   "entrypoints": [
     "static/css/main.2036f67b.css",
-    "static/js/main.24d6e251.js"
+    "static/js/main.8a0f5ec8.js"
   ]
 }
