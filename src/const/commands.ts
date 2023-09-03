@@ -53,7 +53,7 @@ export const getCommandByName = (name: string): string => {
       break;
   }
 
-  return commands.get(name) || `${name}: command not found`;
+  return commands.get(name) ?? `${name}: command not found`;
 };
 
 export const getCommandNames = (): string[] => {
@@ -104,19 +104,10 @@ function aboutText(): string {
     Hello, root!
     <br><br>
 
-    I'm a passionate <span class="terminal-bold">Full-Stack Web Developer</span> from <span class="terminal-bold">Hungary</span>.
-    <br>
-    Most of the time, I work with <span class="terminal-bold">TypeScript</span>, but I love <span class="terminal-bold">Go</span> as well.
+    <span class="terminal-bold">Full-Stack Developer</span> specializing in building high-quality web applications using the <span class="terminal-bold">React</span> ecosystem.<br><br>
 
-    <br><br>
-    Mentionable tools I use on a daily basis:
-    <br>
-    &nbsp; * <span class="terminal-bold">Backend</span>: Laravel, Golang
-    <br>
-    &nbsp; * <span class="terminal-bold">Frontend</span>: React, TailwindCSS, TypeScript
-    <br>
-    &nbsp; * <span class="terminal-bold">Other</span>: Docker, Git
-    <br><br>
+    I have hands-on experience with <span class="terminal-bold">TypeScript</span>, 
+    along with various open-source frameworks and libraries such as <span class="terminal-bold">React, Next.js, Tailwind, NodeJS, Express, and many more.</span><br><br>
 
     Would you like to connect with me? Enter the 'socials' command!<br>
     Want to take a look at my projects? 
