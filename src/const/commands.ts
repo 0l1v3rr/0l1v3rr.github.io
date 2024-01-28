@@ -25,8 +25,8 @@ commands.set(
   "socials",
   "Usage: [command]<br><br>github, linkedin, email, codersrank"
 );
-commands.set("help", helpText());
 commands.set("techstack", techStack());
+commands.set("help", helpText());
 
 export const getCommandByName = (name: string): string => {
   name = name.trim().toLowerCase().split(" ")[0];
@@ -104,10 +104,12 @@ function aboutText(): string {
     Hello, root!
     <br><br>
 
-    <span class="terminal-bold">Full-Stack Developer</span> specializing in building high-quality web applications using the <span class="terminal-bold">React</span> ecosystem.<br><br>
+    Passionate about web development, I am an experienced <span class="terminal-bold">full-stack engineer</span> specializing in <span class="terminal-bold">front-end development</span>.
+    Beginning my coding journey at the age of <span class="terminal-bold">12</span>, I have grown into a <span class="terminal-bold">national champion</span>, demonstrating my dedication and expertise in the field.<br><br>
 
-    I have hands-on experience with <span class="terminal-bold">TypeScript</span>, 
-    along with various open-source frameworks and libraries such as <span class="terminal-bold">React, Next.js, Tailwind, NodeJS, Express, and many more.</span><br><br>
+    My focus on delivering high-quality applications is fueled by a genuine interest in leading technologies, specifically <span class="terminal-bold">React and TypeScript</span>.
+    With hands-on experience in various JavaScript frameworks and libraries such as <span class="terminal-bold">Next.js, NodeJS, and Express</span>, I bring a versatile skill set to each project.
+    I also have a strong background in SQL databases.<br><br>
 
     Would you like to connect with me? Enter the 'socials' command!<br>
     Want to take a look at my projects? 
@@ -211,5 +213,5 @@ function kaliLogo() {
 }
 
 function techStack() {
-  return `<a href="https://github.com/0l1v3rr/github-readme-tech-stack" target="_blank"><img src="https://github-readme-tech-stack.vercel.app/api/cards?title=Tech%20Stack&align=center&titleAlign=center&fontSize=20&lineCount=2&theme=0l1v3rr&line1=laravel,laravel,auto;go,golang,00add8;docker,docker,auto;&line2=react,react,2d79c7;tailwindcss,tailwind,38bdf8;typescript,typescript,2d79c7;&width=420" alt="My Tech Stack" /></a>`;
+  return `<a href="https://github.com/0l1v3rr/github-readme-tech-stack" target="_blank"><img src="https://github-readme-tech-stack.vercel.app/api/cards?title=Tech+Stack&width=420&align=center&titleAlign=center&fontSize=20&lineHeight=10&lineCount=2&theme=0l1v3rr&line1=node.js%2Cnode.js%2Cauto%3Bexpress%2Cexpress%2Cffffff%3Bnestjs%2Cnestjs%2Ce12a54%3B&line2=react%2Creact%2Cauto%3Btailwindcss%2Ctailwind%2Cauto%3Btypescript%2Ctypescript%2Cauto%3B" alt="Tech Stack" /></a>`;
 }
