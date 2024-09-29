@@ -12,28 +12,6 @@
   }
 
   .terminal-scrollbar::-webkit-scrollbar-thumb {
-    @apply bg-kali-gray/[.15] rounded-md transition-all border-[3px] 
-      border-solid border-transparent bg-clip-content;
+    @apply bg-kali-gray/[.15] rounded-md transition-all border-[3px] border-solid border-transparent bg-clip-content;
   }
-
-  .terminal-link {
-    @apply cursor-default hover:underline;
-  }
-
-  .terminal-bold {
-    @apply font-bold text-kali-white;
-  }
-}
-
-.project-frontend {
-  @apply hover:underline text-kali-green cursor-default whitespace-nowrap;
-}
-.project-backend {
-  @apply hover:underline text-kali-white cursor-default whitespace-nowrap;
-}
-.project-fullstack {
-  @apply hover:underline text-kali-yellow cursor-default whitespace-nowrap;
-}
-.project-other {
-  @apply hover:underline text-kali-cyan cursor-default whitespace-nowrap;
 }

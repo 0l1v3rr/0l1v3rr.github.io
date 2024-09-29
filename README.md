@@ -1,8 +1,6 @@
-<h1><a href="https://0l1v3rr.github.io/" target="_blank">0l1v3rr - Terminal Website</a></h1>
+<h1><a href="https://0l1v3rr.github.io/" target="_blank">Kali Linux Terminal Portfolio Website</a></h1>
 
-This is a Kali Linux Terminal-like personal website.
-
-<img src="./screenshots/screenshot.png" alt="screenshot">
+<!-- <img src="./screenshots/screenshot.png" alt="screenshot"> -->
 
 <hr>
 
@@ -12,7 +10,6 @@ This is a Kali Linux Terminal-like personal website.
 - Fun commands
 - Tab autocomplete
 - Hotkeys
-- Responsiveness
 - Interactive UI
 
 <hr>
