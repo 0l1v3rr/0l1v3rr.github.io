@@ -14,10 +14,8 @@ const TerminalPromptInput: FC<TerminalPromptInputProps> = ({ onEnter }) => {
 
   function handleSubmit(e: FormEvent<HTMLFormElement>): void {
     e.preventDefault();
-    if (input.trim() === "") return;
-
-    setInput("");
     onEnter(input);
+    setInput("");
   }
 
   return (

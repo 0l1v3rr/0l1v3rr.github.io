@@ -32,8 +32,16 @@ const UsernameContextProvider: FC<UsernameContextProviderProps> = ({
 }) => {
   const [username, setUsername] = useState("root");
 
+  function handleUsernameChange(possibleUsername?: string | null) {
+    const newUsername = possibleUsername || "root";
+    setUsername(newUsername);
+    document.title = `${newUsername}@kali: ~`;
+  }
+
   return (
-    <UsernameContext.Provider value={{ username, setUsername }}>
+    <UsernameContext.Provider
+      value={{ username, setUsername: handleUsernameChange }}
+    >
       {children}
     </UsernameContext.Provider>
   );
