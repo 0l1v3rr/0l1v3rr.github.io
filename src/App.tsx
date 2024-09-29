@@ -1,7 +1,12 @@
 import Terminal from "./components/terminal/Terminal";
+import UsernameContextProvider from "./context/UsernameContext";
 
 const App = () => {
-  return <Terminal />;
+  return (
+    <UsernameContextProvider>
+      <Terminal />
+    </UsernameContextProvider>
+  );
 };
 
 export default App;

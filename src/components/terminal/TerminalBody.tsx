@@ -1,11 +1,9 @@
 import { FC } from "react";
 import TerminalPrompt from "./TerminalPrompt";
 
-interface TerminalBodyProps {
-  username: string;
-}
+interface TerminalBodyProps {}
 
-const TerminalBody: FC<TerminalBodyProps> = ({ username }) => {
+const TerminalBody: FC<TerminalBodyProps> = () => {
   return (
     <section className="terminal-scrollbar h-full w-full overflow-y-scroll px-1 pb-2 pt-1 text-sm text-kali-gray">
       <TerminalPrompt>sudo asd</TerminalPrompt>

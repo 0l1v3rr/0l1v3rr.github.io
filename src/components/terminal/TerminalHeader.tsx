@@ -1,12 +1,13 @@
 import { FC } from "react";
 import { BsTerminal } from "react-icons/bs";
 import { GrFormClose } from "react-icons/gr";
+import { useUsernameContext } from "../../context/UsernameContext";
 
-interface TerminalHeaderProps {
-  username: string;
-}
+interface TerminalHeaderProps {}
 
-const TerminalHeader: FC<TerminalHeaderProps> = ({ username }) => {
+const TerminalHeader: FC<TerminalHeaderProps> = () => {
+  const { username } = useUsernameContext();
+
   return (
     <header className="relative flex select-none items-center justify-between rounded-tl-md rounded-tr-md border-b border-solid border-black/[.3] bg-kali-black/[.5] px-4 py-2.5 font-segoe font-semibold text-kali-gray">
       <BsTerminal className="text-base opacity-75" />
