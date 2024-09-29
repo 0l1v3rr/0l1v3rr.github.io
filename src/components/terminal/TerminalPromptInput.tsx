@@ -3,9 +3,11 @@ import { twMerge } from "tailwind-merge";
 import { getColorfulPrompt } from "../../lib/utils";
 import parse from "html-react-parser";
 
-interface TerminalPromptInputProps {}
+interface TerminalPromptInputProps {
+  onEnter(prompt: string): void;
+}
 
-const TerminalPromptInput: FC<TerminalPromptInputProps> = ({}) => {
+const TerminalPromptInput: FC<TerminalPromptInputProps> = ({ onEnter }) => {
   const [input, setInput] = useState("");
   const [inputFocus, setInputFocus] = useState(false);
   const [caretPosition, setCaretPosition] = useState(0);
@@ -15,6 +17,7 @@ const TerminalPromptInput: FC<TerminalPromptInputProps> = ({}) => {
     if (input.trim() === "") return;
 
     setInput("");
+    onEnter(input);
   }
 
   return (

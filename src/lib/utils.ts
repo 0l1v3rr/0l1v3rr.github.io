@@ -1,3 +1,5 @@
+import { Prompt } from "../types";
+
 export function getColorfulPrompt(input: string) {
   input = input.replace(/ /g, "&nbsp;");
   const pieces = input.split("&nbsp;");
@@ -14,4 +16,17 @@ export function getColorfulPrompt(input: string) {
   }
 
   return pieces.join("&nbsp;");
+}
+
+export function processPrompt(input: string): Prompt {
+  const pieces = input.split(" ");
+
+  if (pieces[0] === "sudo") {
+    pieces.shift();
+  }
+
+  return {
+    command: pieces[0],
+    args: pieces.slice(1),
+  };
 }
