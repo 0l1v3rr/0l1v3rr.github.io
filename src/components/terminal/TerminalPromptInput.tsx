@@ -1,5 +1,7 @@
 import { FC, FormEvent, useState } from "react";
 import { twMerge } from "tailwind-merge";
+import { getColorfulPrompt } from "../../lib/utils";
+import parse from "html-react-parser";
 
 interface TerminalPromptInputProps {}
 
@@ -44,7 +46,8 @@ const TerminalPromptInput: FC<TerminalPromptInputProps> = ({}) => {
             style={{ left: `${input.length === 0 ? 0 : caretPosition}ch` }}
           />
         )}
-        {input}
+
+        {parse(getColorfulPrompt(input))}
       </div>
     </form>
   );
