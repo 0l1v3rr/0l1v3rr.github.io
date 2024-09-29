@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+*::selection {
+  color: unset;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
 @layer base {
   .terminal-scrollbar::-webkit-scrollbar {
     @apply w-[.75rem];
