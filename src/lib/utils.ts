@@ -20,13 +20,16 @@ export function getColorfulPrompt(input: string) {
 
 export function processPrompt(input: string): Prompt {
   const pieces = input.split(" ");
+  let sudo = false;
 
   if (pieces[0] === "sudo") {
     pieces.shift();
+    sudo = true;
   }
 
   return {
     command: pieces[0],
     args: pieces.slice(1),
+    sudo,
   };
 }

@@ -19,7 +19,7 @@ const TerminalBody: FC<TerminalBodyProps> = () => {
   const scrollToRef = useRef<HTMLDivElement>(null);
 
   function handlePromptEnter(prompt: string) {
-    const { command, args } = processPrompt(prompt);
+    const { command, args, sudo } = processPrompt(prompt);
 
     if (command === "clear") {
       setHistory([]);
@@ -36,7 +36,7 @@ const TerminalBody: FC<TerminalBodyProps> = () => {
       {
         id: uuidv4(),
         prompt,
-        response: getCommandResponse({ command, args }, username),
+        response: getCommandResponse({ command, args, sudo }, username),
         username,
       },
     ]);

@@ -8,4 +8,5 @@ export type History = {
 export type Prompt = {
   command: string;
   args: string[];
+  sudo: boolean;
 };

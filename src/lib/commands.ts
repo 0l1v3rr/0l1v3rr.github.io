@@ -12,15 +12,31 @@ Type 'help' to see the available commands.
 
 `.replace(/\n/g, "<br/>");
 
-export function getCommandResponse({ command }: Prompt, username: string) {
+const COMMANDS: Record<string, (username: string, args: string[]) => string> = {
+  su: () => "",
+  whoami: (username) => username,
+};
+
+const COMMAND_NAMES = [...Object.keys(COMMANDS), "clear", "help"].sort((a, z) =>
+  a.localeCompare(z)
+);
+
+export function getCommandResponse(
+  { command, sudo, args }: Prompt,
+  username: string
+) {
+  if (sudo && !command) return "Usage: sudo [command] [args]";
   if (!command) return "";
 
-  switch (command) {
-    case "su":
-      return " ";
-    case "whoami":
-      return username;
-    default:
-      return `${command}: command not found`;
+  if (command in COMMANDS) {
+    return COMMANDS[command](username, args).replace(/\n/g, "<br/>");
   }
+
+  if (command === "help") {
+    return `Usage: [command] [options] 
+    
+      ${COMMAND_NAMES.join(", ")}`.replace(/\n/g, "<br/>");
+  }
+
+  return `${command}: command not found`;
 }
