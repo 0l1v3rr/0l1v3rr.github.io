@@ -1,4 +1,4 @@
-import { FC, Fragment, useState } from "react";
+import { FC, Fragment, useEffect, useRef, useState } from "react";
 import TerminalPrompt from "./TerminalPrompt";
 import TerminalPromptInput from "./TerminalPromptInput";
 import { History } from "../../types";
@@ -15,6 +15,8 @@ const TerminalBody: FC<TerminalBodyProps> = () => {
 
   const [history, setHistory] = useState<History[]>([]);
   const [motdVisible, setMotdVisible] = useState(true);
+
+  const scrollToRef = useRef<HTMLDivElement>(null);
 
   function handlePromptEnter(prompt: string) {
     const { command, args } = processPrompt(prompt);
@@ -40,6 +42,10 @@ const TerminalBody: FC<TerminalBodyProps> = () => {
     ]);
   }
 
+  useEffect(() => {
+    scrollToRef.current?.scrollIntoView({ behavior: "instant" });
+  }, [history]);
+
   return (
     <section className="terminal-scrollbar h-full w-full overflow-y-scroll px-1 pb-2 pt-1 text-sm text-kali-gray [&_a]:cursor-default hover:[&_a]:underline [&_b]:text-kali-cyan">
       {motdVisible && parse(MOTD)}
@@ -60,6 +66,8 @@ const TerminalBody: FC<TerminalBodyProps> = () => {
       <TerminalPrompt username={username}>
         <TerminalPromptInput onEnter={handlePromptEnter} />
       </TerminalPrompt>
+
+      <div ref={scrollToRef} />
     </section>
   );
 };
