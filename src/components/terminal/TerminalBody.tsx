@@ -35,6 +35,7 @@ const TerminalBody: FC<TerminalBodyProps> = () => {
         id: uuidv4(),
         prompt,
         response: getCommandResponse({ command, args }, username),
+        username,
       },
     ]);
   }
@@ -45,7 +46,7 @@ const TerminalBody: FC<TerminalBodyProps> = () => {
 
       {history.map((item) => (
         <Fragment key={item.id}>
-          <TerminalPrompt>
+          <TerminalPrompt username={item.username}>
             {parse(getColorfulPrompt(item.prompt))}
           </TerminalPrompt>
           <div>
@@ -56,7 +57,7 @@ const TerminalBody: FC<TerminalBodyProps> = () => {
         </Fragment>
       ))}
 
-      <TerminalPrompt>
+      <TerminalPrompt username={username}>
         <TerminalPromptInput onEnter={handlePromptEnter} />
       </TerminalPrompt>
     </section>

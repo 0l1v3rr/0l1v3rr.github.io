@@ -1,15 +1,13 @@
 import { FC, ReactNode } from "react";
 import { GiAlliedStar } from "react-icons/gi";
-import { useUsernameContext } from "../../context/UsernameContext";
 import { twMerge } from "tailwind-merge";
 
 interface TerminalPromptProps {
   children?: ReactNode;
+  username: string;
 }
 
-const TerminalPrompt: FC<TerminalPromptProps> = ({ children }) => {
-  const { username } = useUsernameContext();
-
+const TerminalPrompt: FC<TerminalPromptProps> = ({ children, username }) => {
   const isRoot = username === "root";
   const borderColor = isRoot ? "text-kali-blue" : "text-kali-green";
   const usernameColor = isRoot ? "text-kali-red" : "text-kali-blue";
