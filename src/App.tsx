@@ -1,5 +1,7 @@
+import Terminal from "./components/terminal/Terminal";
+
 const App = () => {
-  return <div className="text-red-600">App</div>;
+  return <Terminal />;
 };
 
 export default App;

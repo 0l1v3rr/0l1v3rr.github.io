@@ -7,7 +7,7 @@ export default {
         kali: "url('./assets/kali-layers.png')",
       },
       colors: {
-        "kali-text-muted": "#7a7a7a",
+        "kali-text-muted": "#8C8C8C",
         "kali-black": "#1F2229",
         "kali-gray-dark": "#13141a",
         "kali-border": "#272a34",
