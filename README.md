@@ -1,6 +1,6 @@
 <h1><a href="https://0l1v3rr.github.io/" target="_blank">Kali Linux Terminal Portfolio Website</a></h1>
 
-<!-- <img src="./screenshots/screenshot.png" alt="screenshot"> -->
+<img src="./screenshots/2024-09-30.png" alt="screenshot">
 
 <hr>
 
