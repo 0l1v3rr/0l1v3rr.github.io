@@ -21,6 +21,7 @@ const TerminalPromptInput: FC<TerminalPromptInputProps> = ({ onEnter }) => {
   return (
     <form onSubmit={handleSubmit} className="relative w-full">
       <input
+        aria-label="Terminal input"
         autoFocus
         onFocus={() => setInputFocus(true)}
         onBlur={(e) => {
