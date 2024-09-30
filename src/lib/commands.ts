@@ -102,6 +102,7 @@ const COMMANDS: Record<string, (username: string, args: string[]) => string> = {
     My focus on delivering high-quality applications is fueled by a genuine interest in leading technologies, particularly <b>React</b>, <b>TypeScript</b>, and <b>Node.js</b>. Leveraging hands-on experience with various JavaScript frameworks and libraries <b>(Next.js, Express, NestJS, etc.)</b> within the React and Node.js ecosystem, I bring a versatile skill set to every project.
 
     I also enjoy showing off my skills in <b>various competitions</b>. My most notable achievement is my participation in the prestigious <b>WorldSkills</b> competitions, where I won a <b>gold medal in Web Technologies category</b>, making me a <b>world champion</b>.`,
+  echo: (_, args) => args.join("&nbsp;"),
 };
 
 const COMMAND_NAMES = [...Object.keys(COMMANDS), "clear", "help"].sort((a, z) =>

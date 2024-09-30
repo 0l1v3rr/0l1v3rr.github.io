@@ -34,7 +34,7 @@ const TerminalPromptInput: FC<TerminalPromptInputProps> = ({ onEnter }) => {
           setInput(e.target.value);
           setCaretPosition(e.target.selectionStart ?? 0);
         }}
-        className="w-full whitespace-nowrap bg-transparent p-0 text-kali-white text-transparent focus:outline-none"
+        className="w-full cursor-default whitespace-nowrap bg-transparent p-0 text-kali-white text-transparent focus:outline-none"
       />
       <div
         className={twMerge(
