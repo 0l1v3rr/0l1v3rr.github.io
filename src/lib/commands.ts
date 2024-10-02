@@ -105,8 +105,8 @@ const COMMANDS: Record<string, (username: string, args: string[]) => string> = {
   echo: (_, args) => args.join("&nbsp;"),
 };
 
-const COMMAND_NAMES = [...Object.keys(COMMANDS), "clear", "help"].sort((a, z) =>
-  a.localeCompare(z)
+export const COMMAND_NAMES = [...Object.keys(COMMANDS), "clear", "help"].sort(
+  (a, z) => a.localeCompare(z)
 );
 
 export function getCommandResponse(
