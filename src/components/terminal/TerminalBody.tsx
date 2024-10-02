@@ -16,8 +16,8 @@ const TerminalBody: FC<TerminalBodyProps> = () => {
 
   const [history, setHistory] = useState<History[]>([]);
   const [motdVisible, setMotdVisible] = useState(true);
-  const [commandHistory, setCommandHistory] = useLocalStorage<string[]>(
-    "commandHistory",
+  const [promptHistory, setPromptHistory] = useLocalStorage<string[]>(
+    "promptHistory",
     []
   );
 
@@ -32,7 +32,7 @@ const TerminalBody: FC<TerminalBodyProps> = () => {
     const { command, args, sudo } = processPrompt(prompt);
 
     if (command) {
-      setCommandHistory((prev) => [...prev, command]);
+      setPromptHistory((prev) => [...prev, prompt]);
     }
 
     if (command === "clear") {
@@ -53,7 +53,7 @@ const TerminalBody: FC<TerminalBodyProps> = () => {
         response: getCommandResponse(
           { command, args, sudo },
           username,
-          commandHistory
+          promptHistory
         ),
       },
     ]);
@@ -82,7 +82,7 @@ const TerminalBody: FC<TerminalBodyProps> = () => {
 
       <TerminalPrompt username={username}>
         <TerminalPromptInput
-          history={commandHistory}
+          history={promptHistory}
           onEnter={handlePromptEnter}
           onClear={handleClear}
         />

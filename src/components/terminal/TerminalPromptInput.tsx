@@ -1,4 +1,11 @@
-import { FC, FormEvent, Fragment, KeyboardEvent, useState } from "react";
+import {
+  FC,
+  FormEvent,
+  Fragment,
+  KeyboardEvent,
+  useEffect,
+  useState,
+} from "react";
 import { twMerge } from "tailwind-merge";
 import { getColorfulPrompt } from "../../lib/utils";
 import parse from "html-react-parser";
@@ -11,12 +18,20 @@ interface TerminalPromptInputProps {
 }
 
 const TerminalPromptInput: FC<TerminalPromptInputProps> = ({
+  history,
   onEnter,
   onClear,
 }) => {
   const [input, setInput] = useState("");
   const [inputFocus, setInputFocus] = useState(false);
   const [caretPosition, setCaretPosition] = useState(0);
+  const [currentHistoryIndex, setCurrentHistoryIndex] = useState(
+    history.length
+  );
+
+  useEffect(() => {
+    setCurrentHistoryIndex(history.length);
+  }, [history.length]);
 
   function handleSubmit(e: FormEvent<HTMLFormElement>): void {
     e.preventDefault();
@@ -43,6 +58,19 @@ const TerminalPromptInput: FC<TerminalPromptInputProps> = ({
       onClear();
       return;
     }
+
+    if (["ArrowUp", "ArrowDown"].includes(e.key)) {
+      e.preventDefault();
+
+      const newHistoryIndex =
+        e.key === "ArrowUp"
+          ? Math.max(0, currentHistoryIndex - 1)
+          : Math.min(history.length, currentHistoryIndex + 1);
+
+      setCurrentHistoryIndex(newHistoryIndex);
+      setInput(history[newHistoryIndex] ?? "");
+      setCaretPosition(history[newHistoryIndex]?.length ?? 0);
+    }
   }
 
   return (
@@ -61,6 +89,7 @@ const TerminalPromptInput: FC<TerminalPromptInputProps> = ({
         onChange={(e) => {
           setInput(e.target.value);
           setCaretPosition(e.target.selectionStart ?? 0);
+          setCurrentHistoryIndex(history.length);
         }}
         className="w-full cursor-default whitespace-nowrap bg-transparent p-0 text-kali-white text-transparent focus:outline-none"
       />
