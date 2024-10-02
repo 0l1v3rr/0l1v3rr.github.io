@@ -5,6 +5,7 @@ import parse from "html-react-parser";
 import { COMMAND_NAMES } from "../../lib/commands";
 
 interface TerminalPromptInputProps {
+  history: string[];
   onEnter(prompt: string): void;
   onClear(): void;
 }

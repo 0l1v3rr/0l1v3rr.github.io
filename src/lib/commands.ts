@@ -81,7 +81,10 @@ const KALI_LOGO = `
 
 const TECH_STACK = `<a href="https://github.com/0l1v3rr/github-readme-tech-stack" target="_blank"><img src="https://github-readme-tech-stack.vercel.app/api/cards?title=Tech+Stack&width=420&align=center&titleAlign=center&fontSize=20&lineHeight=10&lineCount=2&theme=0l1v3rr&line1=node.js%2Cnode.js%2Cauto%3Bexpress%2Cexpress%2Cffffff%3Bnestjs%2Cnestjs%2Ce12a54%3B&line2=react%2Creact%2Cauto%3Btailwindcss%2Ctailwind%2Cauto%3Btypescript%2Ctypescript%2Cauto%3B" alt="Tech Stack" /></a>`;
 
-const COMMANDS: Record<string, (username: string, args: string[]) => string> = {
+const COMMANDS: Record<
+  string,
+  (username: string, args: string[], history: string[]) => string
+> = {
   su: () => "",
   whoami: (username) => username,
   motd: () => MOTD,
@@ -103,6 +106,7 @@ const COMMANDS: Record<string, (username: string, args: string[]) => string> = {
 
     I also enjoy showing off my skills in <b>various competitions</b>. My most notable achievement is my participation in the prestigious <b>WorldSkills</b> competitions, where I won a <b>gold medal in Web Technologies category</b>, making me a <b>world champion</b>.`,
   echo: (_, args) => args.join("&nbsp;"),
+  history: (_, __, history) => history.join("<br/>"),
 };
 
 export const COMMAND_NAMES = [...Object.keys(COMMANDS), "clear", "help"].sort(
@@ -111,13 +115,14 @@ export const COMMAND_NAMES = [...Object.keys(COMMANDS), "clear", "help"].sort(
 
 export function getCommandResponse(
   { command, sudo, args }: Prompt,
-  username: string
+  username: string,
+  history: string[]
 ) {
   if (sudo && !command) return "Usage: sudo [command] [args]";
   if (!command) return "";
 
   if (command in COMMANDS) {
-    let result = COMMANDS[command](username, args);
+    let result = COMMANDS[command](username, args, history);
     if (command !== "kali") {
       result = result.replace(/\n/g, "<br/>");
     }

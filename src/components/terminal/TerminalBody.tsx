@@ -15,6 +15,7 @@ const TerminalBody: FC<TerminalBodyProps> = () => {
 
   const [history, setHistory] = useState<History[]>([]);
   const [motdVisible, setMotdVisible] = useState(true);
+  const [commandHistory, setCommandHistory] = useState<string[]>([]);
 
   const scrollToRef = useRef<HTMLDivElement>(null);
 
@@ -25,6 +26,10 @@ const TerminalBody: FC<TerminalBodyProps> = () => {
 
   function handlePromptEnter(prompt: string) {
     const { command, args, sudo } = processPrompt(prompt);
+
+    if (command) {
+      setCommandHistory((prev) => [...prev, command]);
+    }
 
     if (command === "clear") {
       handleClear();
@@ -40,8 +45,12 @@ const TerminalBody: FC<TerminalBodyProps> = () => {
       {
         id: uuidv4(),
         prompt,
-        response: getCommandResponse({ command, args, sudo }, username),
         username,
+        response: getCommandResponse(
+          { command, args, sudo },
+          username,
+          commandHistory
+        ),
       },
     ]);
   }
@@ -69,6 +78,7 @@ const TerminalBody: FC<TerminalBodyProps> = () => {
 
       <TerminalPrompt username={username}>
         <TerminalPromptInput
+          history={commandHistory}
           onEnter={handlePromptEnter}
           onClear={handleClear}
         />
