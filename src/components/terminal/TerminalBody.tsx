@@ -18,12 +18,16 @@ const TerminalBody: FC<TerminalBodyProps> = () => {
 
   const scrollToRef = useRef<HTMLDivElement>(null);
 
+  function handleClear() {
+    setHistory([]);
+    setMotdVisible(false);
+  }
+
   function handlePromptEnter(prompt: string) {
     const { command, args, sudo } = processPrompt(prompt);
 
     if (command === "clear") {
-      setHistory([]);
-      setMotdVisible(false);
+      handleClear();
       return;
     }
 
@@ -64,7 +68,10 @@ const TerminalBody: FC<TerminalBodyProps> = () => {
       ))}
 
       <TerminalPrompt username={username}>
-        <TerminalPromptInput onEnter={handlePromptEnter} />
+        <TerminalPromptInput
+          onEnter={handlePromptEnter}
+          onClear={handleClear}
+        />
       </TerminalPrompt>
 
       <div ref={scrollToRef} />

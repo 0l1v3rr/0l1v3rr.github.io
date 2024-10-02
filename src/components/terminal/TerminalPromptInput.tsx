@@ -6,9 +6,13 @@ import { COMMAND_NAMES } from "../../lib/commands";
 
 interface TerminalPromptInputProps {
   onEnter(prompt: string): void;
+  onClear(): void;
 }
 
-const TerminalPromptInput: FC<TerminalPromptInputProps> = ({ onEnter }) => {
+const TerminalPromptInput: FC<TerminalPromptInputProps> = ({
+  onEnter,
+  onClear,
+}) => {
   const [input, setInput] = useState("");
   const [inputFocus, setInputFocus] = useState(false);
   const [caretPosition, setCaretPosition] = useState(0);
@@ -30,6 +34,13 @@ const TerminalPromptInput: FC<TerminalPromptInputProps> = ({ onEnter }) => {
       e.preventDefault();
       setInput(autocompleteCommand);
       setCaretPosition(autocompleteCommand.length);
+      return;
+    }
+
+    if (e.ctrlKey && e.key === "l") {
+      e.preventDefault();
+      onClear();
+      return;
     }
   }
 

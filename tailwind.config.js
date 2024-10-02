@@ -46,7 +46,7 @@ export default {
       },
       boxShadow: {
         "5xl": "0 10px 30px 0 rgba(0, 0, 0, 0.75)",
-        terminal: "0 0 0 2px rgba(0, 0, 0, 0.16)",
+        terminal: "0 0 0 3px rgba(0, 0, 0, 0.16)",
       },
     },
   },
