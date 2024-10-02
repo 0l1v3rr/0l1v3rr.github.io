@@ -3,8 +3,9 @@ import {
   FC,
   PropsWithChildren,
   useContext,
-  useState,
+  useEffect,
 } from "react";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 interface UsernameContextType {
   username: string;
@@ -30,13 +31,16 @@ interface UsernameContextProviderProps extends PropsWithChildren {}
 const UsernameContextProvider: FC<UsernameContextProviderProps> = ({
   children,
 }) => {
-  const [username, setUsername] = useState("root");
+  const [username, setUsername] = useLocalStorage("username", "root");
 
   function handleUsernameChange(possibleUsername?: string | null) {
     const newUsername = possibleUsername || "root";
     setUsername(newUsername);
-    document.title = `${newUsername}@kali: ~`;
   }
+
+  useEffect(() => {
+    document.title = `${username}@kali: ~`;
+  }, [username]);
 
   return (
     <UsernameContext.Provider

@@ -7,6 +7,7 @@ import { v4 as uuidv4 } from "uuid";
 import parse from "html-react-parser";
 import { useUsernameContext } from "../../context/UsernameContext";
 import { getCommandResponse, MOTD } from "../../lib/commands";
+import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 interface TerminalBodyProps {}
 
@@ -15,7 +16,10 @@ const TerminalBody: FC<TerminalBodyProps> = () => {
 
   const [history, setHistory] = useState<History[]>([]);
   const [motdVisible, setMotdVisible] = useState(true);
-  const [commandHistory, setCommandHistory] = useState<string[]>([]);
+  const [commandHistory, setCommandHistory] = useLocalStorage<string[]>(
+    "commandHistory",
+    []
+  );
 
   const scrollToRef = useRef<HTMLDivElement>(null);
 
