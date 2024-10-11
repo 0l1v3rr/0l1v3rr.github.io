@@ -11,6 +11,7 @@ import { twMerge } from "tailwind-merge";
 import { getColorfulPrompt } from "../../lib/utils";
 import parse from "html-react-parser";
 import { COMMAND_NAMES } from "../../lib/commands";
+import { flushSync } from "react-dom";
 
 interface TerminalPromptInputProps {
   history: string[];
@@ -48,7 +49,9 @@ const TerminalPromptInput: FC<TerminalPromptInputProps> = ({
     : undefined;
 
   function handleKeyDown(e: KeyboardEvent<HTMLInputElement>) {
-    setCaretPosition(e.currentTarget.selectionStart ?? 0);
+    new Promise(() =>
+      flushSync(() => setCaretPosition(e.currentTarget.selectionStart ?? 0))
+    );
 
     if (autocompleteCommand && e.key === "Tab") {
       e.preventDefault();
@@ -88,13 +91,12 @@ const TerminalPromptInput: FC<TerminalPromptInputProps> = ({
           e.target.focus();
         }}
         value={input}
-        onClick={(e) => setCaretPosition(e.currentTarget.selectionStart ?? 0)}
         onKeyDown={handleKeyDown}
+        onKeyUp={(e) => setCaretPosition(e.currentTarget.selectionStart ?? 0)}
         onChange={(e) => {
           clearTimeout(shouldBlinkTimeoutRef.current);
 
           setInput(e.target.value);
-          setCaretPosition(e.target.selectionStart ?? 0);
           setCurrentHistoryIndex(history.length);
 
           setShouldBlink(false);
