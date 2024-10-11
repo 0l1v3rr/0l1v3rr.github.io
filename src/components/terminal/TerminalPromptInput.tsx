@@ -49,6 +49,8 @@ const TerminalPromptInput: FC<TerminalPromptInputProps> = ({
     : undefined;
 
   function handleKeyDown(e: KeyboardEvent<HTMLInputElement>) {
+    clearTimeout(shouldBlinkTimeoutRef.current);
+
     new Promise(() =>
       flushSync(() => setCaretPosition(e.currentTarget.selectionStart ?? 0))
     );
@@ -78,6 +80,9 @@ const TerminalPromptInput: FC<TerminalPromptInputProps> = ({
       setInput(history[newHistoryIndex] ?? "");
       setCaretPosition(history[newHistoryIndex]?.length ?? 0);
     }
+
+    setShouldBlink(false);
+    shouldBlinkTimeoutRef.current = setTimeout(() => setShouldBlink(true), 500);
   }
 
   return (
@@ -94,16 +99,8 @@ const TerminalPromptInput: FC<TerminalPromptInputProps> = ({
         onKeyDown={handleKeyDown}
         onKeyUp={(e) => setCaretPosition(e.currentTarget.selectionStart ?? 0)}
         onChange={(e) => {
-          clearTimeout(shouldBlinkTimeoutRef.current);
-
           setInput(e.target.value);
           setCurrentHistoryIndex(history.length);
-
-          setShouldBlink(false);
-          shouldBlinkTimeoutRef.current = setTimeout(
-            () => setShouldBlink(true),
-            500
-          );
         }}
         className="w-full cursor-default whitespace-nowrap bg-transparent p-0 text-kali-white text-transparent focus:outline-none"
       />
