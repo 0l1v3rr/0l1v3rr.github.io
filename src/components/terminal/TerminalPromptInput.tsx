@@ -4,6 +4,7 @@ import {
   Fragment,
   KeyboardEvent,
   useEffect,
+  useRef,
   useState,
 } from "react";
 import { twMerge } from "tailwind-merge";
@@ -24,6 +25,9 @@ const TerminalPromptInput: FC<TerminalPromptInputProps> = ({
 }) => {
   const [input, setInput] = useState("");
   const [inputFocus, setInputFocus] = useState(false);
+  const [shouldBlink, setShouldBlink] = useState(true);
+  const shouldBlinkTimeoutRef = useRef<number>();
+
   const [caretPosition, setCaretPosition] = useState(0);
   const [currentHistoryIndex, setCurrentHistoryIndex] = useState(
     history.length
@@ -87,9 +91,17 @@ const TerminalPromptInput: FC<TerminalPromptInputProps> = ({
         onClick={(e) => setCaretPosition(e.currentTarget.selectionStart ?? 0)}
         onKeyDown={handleKeyDown}
         onChange={(e) => {
+          clearTimeout(shouldBlinkTimeoutRef.current);
+
           setInput(e.target.value);
           setCaretPosition(e.target.selectionStart ?? 0);
           setCurrentHistoryIndex(history.length);
+
+          setShouldBlink(false);
+          shouldBlinkTimeoutRef.current = setTimeout(
+            () => setShouldBlink(true),
+            500
+          );
         }}
         className="w-full cursor-default whitespace-nowrap bg-transparent p-0 text-kali-white text-transparent focus:outline-none"
       />
@@ -110,7 +122,10 @@ const TerminalPromptInput: FC<TerminalPromptInputProps> = ({
       >
         {inputFocus && (
           <span
-            className="content[''] absolute top-0 h-[20px] w-2 animate-blink bg-kali-gray/[.8]"
+            className={twMerge(
+              "content[''] absolute top-0 h-[20px] w-2 bg-kali-gray/[.8]",
+              shouldBlink && "animate-blink"
+            )}
             style={{ left: `${input.length === 0 ? 0 : caretPosition}ch` }}
           />
         )}

@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        kali: "url('./assets/kali-layers.png')",
+        kali: "url('./assets/kali-layers.webp')",
       },
       colors: {
         "kali-text-muted": "#8C8C8C",
